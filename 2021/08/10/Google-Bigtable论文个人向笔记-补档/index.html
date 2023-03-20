@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Google_Bigtable论文个人向笔记(补档) | Hengist&#39;s Blog</title>
+  <meta name="author" content="Hengist">
+  
+  <meta name="description" content="Bigtable：分布式结构化数据存储系统概述用来处理海量数据：分布在数千台普通服务器上的PB级数据（1PB&amp;#x3D;1024TB 1EB&amp;#x3D;1024PB 1ZB&amp;#x3D;1024EB）应用广泛，从搜索引擎到地图卫星图像。提供一个灵活的、高性能的解决方案，以满足在数据量和响应速度等方面具有差异性的应用需求
+特点：高适用性、可扩展性、高性能、高可用性（灵活性）使用了一部分数据库的实现策略，但差别很大。不支持完整的关系数据模型，仅提供了简单的数据模型，通过此，用户可以动态控制数据的分布和格式。也就是对于Bigtable来说，数据只是单纯的数据，没有结构（Schema）。（对于schema我的理解是较为复杂的数据结构，例如图、树等）我个人的理解是，因为该系统里面存储的都是数据量很大的table，所以叫Bigtable :)
+数据模型：Google SSTable文件格式：一个持久化的、排序的、不可更改的Map结构其中的key有行、列和时间戳三个维度，value 是string（byte数组）(row:string, column:string,time:int64)-&amp;gt;string
+行（row）：行关键词是string，最高支持64kB   Bigtable通过行关键词的字典顺序来组织数据在一行内的读写都是“原子”的（即可以对任何列进行操作）在每一行中，可以进行数据的动态分区，形成“tablet”，提高读取访问效率。
+列（column）："> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Google_Bigtable论文个人向笔记(补档)"/>
+  <meta property="og:site_name" content="Hengist&#39;s Blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hengist&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Hengist&#39;s Blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Google_Bigtable论文个人向笔记(补档)</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="Bigtable：分布式结构化数据存储系统"><a href="#Bigtable：分布式结构化数据存储系统" class="headerlink" title="Bigtable：分布式结构化数据存储系统"></a>Bigtable：分布式结构化数据存储系统</h1><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>用来处理海量数据：分布在数千台普通服务器上的PB级数据<br>（1PB&#x3D;1024TB 1EB&#x3D;1024PB 1ZB&#x3D;1024EB）<br>应用广泛，从搜索引擎到地图卫星图像。<br><strong>提供一个灵活的、高性能的解决方案，以满足在数据量和响应速度等方面具有差异性的应用需求</strong></p>
+<h2 id="特点：高适用性、可扩展性、高性能、高可用性（灵活性）"><a href="#特点：高适用性、可扩展性、高性能、高可用性（灵活性）" class="headerlink" title="特点：高适用性、可扩展性、高性能、高可用性（灵活性）"></a>特点：高适用性、可扩展性、高性能、高可用性（灵活性）</h2><p>使用了一部分数据库的实现策略，但差别很大。<br><strong>不支持完整的关系数据模型，仅提供了简单的数据模型，通过此，用户可以动态控制数据的分布和格式。也就是对于Bigtable来说，数据只是单纯的数据，没有结构（Schema）。</strong><br>（对于schema我的理解是较为复杂的数据结构，例如图、树等）<br>我个人的理解是，因为该系统里面存储的都是数据量很大的table，所以叫Bigtable :)</p>
+<h1 id="数据模型："><a href="#数据模型：" class="headerlink" title="数据模型："></a>数据模型：</h1><p><strong>Google SSTable文件格式：一个持久化的、排序的、不可更改的Map结构</strong><br><strong>其中的key有行、列和时间戳三个维度，value 是string（byte数组）<br><code>(row:string, column:string,time:int64)-&gt;string</code></strong></p>
+<h2 id="行（row）："><a href="#行（row）：" class="headerlink" title="行（row）："></a>行（row）：</h2><p>行关键词是string，最高支持64kB   Bigtable通过行关键词的字典顺序来组织数据<br>在一行内的读写都是“原子”的（即可以对任何列进行操作）<br>在每一行中，可以进行数据的<strong>动态分区</strong>，形成“tablet”，提高读取访问效率。</p>
+<h2 id="列（column）："><a href="#列（column）：" class="headerlink" title="列（column）："></a>列（column）：</h2><p>先分为最多几百个“<strong>列族</strong>”，每个列族再分成不同的列。<br>同一列族内的数据一般<strong>类型相同</strong>。列族的名字必须是可打印的字符串。列族必须先创建再使用，运行期间很少改变。<br>在每个列族之内，每个列有“<strong>限定词</strong>”是string。<br>访问控制、磁盘和内存统计都是在列族层面统计的。</p>
+<h2 id="时间戳（time）："><a href="#时间戳（time）：" class="headerlink" title="时间戳（time）："></a>时间戳（time）：</h2><p>64位int ，精确到毫秒。<br>在相同的行列中，数据按时间戳倒序排列<br>有垃圾回收功能，有两个参数分别决定了数据保留时间和保留版数。</p>
+<h2 id="硬件结构："><a href="#硬件结构：" class="headerlink" title="硬件结构："></a>硬件结构：</h2><p>从内部看，SSTable是一系列的数据块（通常每个块的大小是64KB，这个大小是可以配置的）<br>SSTable使用块索引（通常存储在SSTable的最后）来定位数据块，在打开SSTable的时候，索引被加载到内存。<br>每次查找都可以通过一次磁盘搜索完成：首先使用二分查找法在内存中的索引里找到数据块的位置，然后再从硬盘读取相应的数据块；也可以选择把整个SSTable都放在内存中，这样就不必访问硬盘了。</p>
+<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><p>在客户程序中，可以对Bigtable的数据进行如下操作：<br><strong>查找、遍历、添加、修改、删除</strong><br>例如论文中的c++代码：<br>可以通过先确定某一行(row)再确定该行内的某一列族(column family)的方式对数据进行操作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Table *T = <span class="built_in">OpenOrDie</span>(<span class="string">&quot;/bigtable/web/webtable&quot;</span>);<span class="comment">//创建table指针对象</span></span><br><span class="line"><span class="function">RowMutation <span class="title">r1</span><span class="params">(T, <span class="string">&quot;com.cnn.www&quot;</span>)</span></span>;<span class="comment">//找到&quot;com.cnn.www&quot;对应行，创建行操作对象</span></span><br><span class="line">r1.<span class="built_in">Set</span>(<span class="string">&quot;anchor:www.c-span.org&quot;</span>, <span class="string">&quot;CNN&quot;</span>);<span class="comment">//找到&quot;anchor&quot;列族中&quot;www.c-span.org&quot;列，将内容替换</span></span><br><span class="line">r1.<span class="built_in">Delete</span>(<span class="string">&quot;anchor:www.abc.com&quot;</span>);<span class="comment">//删除&quot;anchor&quot;列族中&quot;www.abc.com&quot;列的内容</span></span><br></pre></td></tr></table></figure>
+<p>也可以通过先确定某一列族再确定该列族的某一行的方式对数据进行操作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Scanner <span class="title">scanner</span><span class="params">(T)</span></span>;<span class="comment">//创建用于扫描Bigtable的scanner对象</span></span><br><span class="line">ScanStream *stream;<span class="comment">//创建用于指向某一列族的stream指针对象</span></span><br><span class="line">stream = scanner.<span class="built_in">FetchColumnFamily</span>(<span class="string">&quot;anchor&quot;</span>);<span class="comment">//让stream指针指向&quot;anchor&quot;列族</span></span><br><span class="line">stream-&gt;<span class="built_in">SetReturnAllVersions</span>();<span class="comment">//设置让stream扫描时返回数据的所有版本？</span></span><br><span class="line">scanner.<span class="built_in">Lookup</span>(<span class="string">&quot;com.cnn.www&quot;</span>);<span class="comment">//找到&quot;com.cnn.www&quot;行</span></span><br><span class="line"><span class="keyword">for</span> (; !stream-&gt;<span class="built_in">Done</span>(); stream-&gt;<span class="built_in">Next</span>()) <span class="comment">//遍历该列族该行的所有列及其内容</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s %s %lld %s\n&quot;</span>,scanner.<span class="built_in">RowName</span>(),stream-&gt;<span class="built_in">ColumnName</span>(),stream-&gt;<span class="built_in">MicroTimestamp</span>(),stream-&gt;<span class="built_in">Value</span>());</span><br></pre></td></tr></table></figure>
+<p>同时，Bigtable还提供跨行批量写入数据的接口，但暂不支持跨行事务处理<br>最后，Bigtable允许用户在服务器的地址空间内执行脚本程序</p>
+<h1 id="组件介绍"><a href="#组件介绍" class="headerlink" title="组件介绍"></a>组件介绍</h1><p>Bigtable包括了三个主要的组件：链接到<strong>客户程序中的库</strong>、一个<strong>Master服务器</strong>和多个<strong>Tablet服务器</strong>。<br><strong>Tablet服务器：</strong> 管理一个Tablet集合（数十个到上千个），每个Tablet又会加载数个SSTable文件<br><strong>Master服务器：</strong> 为Tablet服务器分配Tablets、检测新加入的或者过期失效的Table服务<br>器、对Tablet服务器进行负载均衡<br><strong>客户程序中的库：</strong> 用于缓存用户Tablet的地址信息，如果没有缓存或者信息有误，则通过一个寻址算法与服务器通信重新获得。<br>客户端读取的数据都不经过Master服务器：客户程序直接和Tablet服务器通信进行读写操作。</p>
+<p>除此之外，Bigtable还使用了一项名为Chubby的分布式锁服务组件，会在后文介绍。</p>
+<h2 id="Bigtable数据结构"><a href="#Bigtable数据结构" class="headerlink" title="Bigtable数据结构"></a>Bigtable数据结构</h2><p><img src="https://img-blog.csdnimg.cn/c3436b43b7b54a20a3d0d4b90843c409.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbmdpc3RfWg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>Bigtable数据结构如图，一共有三层：<br>第一层是一个存储在Chubby中的文件，它包含了Root Tablet的位置信息。（Chubby介绍见后文）<br>第二层是一个名为METADATA的表，包含着所有Tablet。其第一项Root Tablet包含了一个特殊的table，记录着所有的Tablet的位置信息。<br>METADATA表的每个Tablet包含了一个用户所有Table的集合。第三层便是每个用户的Tables。</p>
+<h2 id="Master与Tablet服务器"><a href="#Master与Tablet服务器" class="headerlink" title="Master与Tablet服务器"></a>Master与Tablet服务器</h2><p>一个Tablet只能分给一个Tablet服务器。当一个Tablet尚未被分配时，会由Master服务器向一个有足够空闲空间的Tablet服务器发送一个装载请求，将其分配。</p>
+<p>当一个Tablet服务器启动时，它<strong>在Chubby的一个指定目录下建立一个有唯一性名字的文件</strong>，并且获取该文件的独占锁，BigTable由此跟踪记录Tablet服务器的状态：<br>当一个新的Tablet服务器加入时，一直监视Chubby中服务器目录的Master服务器会立刻得知。当一个Tablet服务器出现故障时，它与Chubby的会话将丢失。<br>如果Master服务器与一个Tablet服务器失联了，Master服务器会尝试在Chubby上获取该Tablet服务器的文件锁，如果获取成功，则将其删除并重新分配该服务器的所有Tablet。<br>Tablet服务器恢复时，会重新获取与Chubby的文件锁，如果获取失败则自行退出，会释放所有Tablet让Master服务器重新分配。</p>
+<p>当一个Master服务器启动时，它会：1）从Chubby获取唯一Master锁以防止出现其他Master 2）从Chubby获取Tablet服务器列表 3）与每个Tablet服务器联系获取其Tablet存储信息 4）扫描Root Table得到未分配的Tablet并将其分配</p>
+<h2 id="Tablet服务"><a href="#Tablet服务" class="headerlink" title="Tablet服务"></a>Tablet服务</h2><p>每一个用户的SSTable文件是保存在GFS之中的。读取时，Tablet服务器把SSTable的索引读进内存，之后在内存中进行构建。修改时，会先将更新操作提交到REDO日志中，之后存放于一个排序缓存最后进行提交。</p>
+<h1 id="Big-Table功能与应用概述"><a href="#Big-Table功能与应用概述" class="headerlink" title="Big Table功能与应用概述"></a>Big Table功能与应用概述</h1><h2 id="优化功能"><a href="#优化功能" class="headerlink" title="优化功能"></a>优化功能</h2><p><strong>局部性群组：</strong> 将多个<strong>列族</strong>选出形成一个新的SSTable，以提高读取和操作效率。<br><strong>对SSTable的压缩：</strong> 客户端可以指定压缩模式，例如可以将多个局部性群组压缩，读取时只需解压其中一部分，以此提高访问效率。<br><strong>Bloom过滤器：</strong> 用于过滤空的行和列，以减少硬盘访问次数，提高检索速度<br><strong>Commit日志：</strong> 简而言之将对于Table的操作写进一个文件而不拆分，减少磁盘操作数量以提高普通操作的性能。</p>
+<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><p><strong>Google Analytics：</strong> 用来帮助Web站点的管理员分析他们网站的流量模式，比如用户数量、URL浏览次数、用户行为统计报告等…<br><strong>Google Earth：</strong> 高分辨率的地球表面卫星图像<br><strong>Google Personal Search（个性化查询）：</strong> 该服务记录着yoghurt使用过的各种google服务，例如Web查询、图像和新闻。用户可以通过该服务重复之前的查询和点击，google也可以通过此为用户定制与推荐个性化服务。</p>
+<h1 id="补充：分布式系统"><a href="#补充：分布式系统" class="headerlink" title="补充：分布式系统"></a>补充：分布式系统</h1><h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><p><strong>集中式系统：</strong> 由一台或多台主计算机组成<strong>中心节点</strong>，满足<strong>数据的集中存储</strong>、<strong>业务单元的集中部署</strong>、<strong>系统功能的集中处理</strong>。<br>优点：结构简单、部署简单、架构简单<br>缺点：大型机价格昂贵、容错率低（单点故障则服务终止）、研发成本高且性能受限于摩尔定律</p>
+<p><strong>分布式系统：</strong> 一个<strong>硬件或软件分布在不同的网络计算机上</strong>，彼此间<strong>仅仅通过消息传递进行通信和协调</strong>的系统。 <strong>物理上的多台主机组建成一个逻辑上的单台主机。</strong> 有如下特点：<br><strong>分布性</strong>：多台计算机在空间上随意分布，且分布情况随时变动<br><strong>对等性</strong>：集群中的每个工作节点的优先级是一样的，即各个节点 <strong>互为副本</strong><br><strong>并发性</strong>： 多个节点<strong>同时操作</strong>一个数据库或者存储系统<strong>可能引发数据不一致</strong><br><strong>同步性差</strong>：缺乏全局时钟，多个主机上<strong>事件的先后顺序难以界定</strong></p>
+<h2 id="相关概念："><a href="#相关概念：" class="headerlink" title="相关概念："></a>相关概念：</h2><p><strong>并行</strong>(parallelism)：在<strong>多处理器</strong>系统中同时运行<strong>多个线程</strong>，且不会互相抢占cpu资源<br><strong>并发</strong>(concurrency)：在<strong>单处理器</strong>系统中同时运行<strong>多个线程</strong>，由操作系统负责调度cpu资源使得同一时间线程都处于运行状态<br><strong>同步</strong>(synchronous)：在进程（程序）执行IO（与外部数据交互）时，线程处于等待状态<br><strong>异步</strong>(asynchronous)：在进程的IO尚未完成时，线程已经开始运行<br><strong>阻塞</strong>(blocking)：在进程发出指令后，等待cpu处理完成后再进行后面操作<br><strong>非阻塞</strong>(nonblocking)：进程发出指令后，直接继续，过一段时间再回来问cpu是否处理完成（轮询）</p>
+<h2 id="分布式系统性能指标："><a href="#分布式系统性能指标：" class="headerlink" title="分布式系统性能指标："></a>分布式系统性能指标：</h2><p><strong>吞吐能力</strong>：每秒可以处理的数据量<br><strong>响应延迟</strong>：完成某一功能所需要时间<br><strong>并发能力</strong>：同时完成多种功能的能力（QPS：每秒响应次数）<br><strong>可用性（可靠性）</strong>：系统容错能力（面对异常时的服务能力），可以由停服务时间与正常服务时间比例衡量<br><strong>可扩展性</strong>：系统中可以随着集群中的机器数量线性增长的指标<br><strong>一致性</strong>：读和写操作之间的延时（强一致性指写操作完成后可以立刻读到、弱一致性则需要经过一段时间）读写一致性：对于单个用户的强一致性。最终一致性：最差的一致性，因为优先考虑高并发能力<br>以上所有性能不能兼得，在不同的应用场景下必然会有取舍。</p>
+<h2 id="分布式事物"><a href="#分布式事物" class="headerlink" title="分布式事物"></a>分布式事物</h2><p>：多个节点同时执行的事物，必须满足<strong>ACID</strong>（原子性、一致性、持久性、隔离性）<br>为了保证事物的ACID特性，需要引入一个<strong>协调者</strong>节点（Cooradinator）来调度所有节点的行为，而其他的节点被称作<strong>参与者</strong></p>
+<h2 id="2PC（二阶段提交协议）"><a href="#2PC（二阶段提交协议）" class="headerlink" title="2PC（二阶段提交协议）"></a>2PC（二阶段提交协议）</h2><p>1、<strong>请求&#x2F;表决阶段</strong>：协调者节点得到请求后，向所有参与者节点发送事物<strong>预处理请求</strong>(vote request)<br>此时对于每个参与者，<strong>如果可以执行请求则立刻执行</strong>，写入<strong>undo</strong>和<strong>redo</strong>日志，执行完成后向协调者返回“YES”；<strong>如果不能执行则立刻返回“NO”</strong><br>（undo日志用于保存被修改前的数据，如果执行“回滚(rollback)”操作则将undo中数据覆盖回去即撤销修改；执行修改操作时，如果将数据逐个放入磁盘效率太低且容错较差，所以先将修改后的数据写入redo日志最后统一录入磁盘）<br>2、<strong>提交&#x2F;回滚阶段</strong>：经过一段时间后，如果协调者接收到了所有“YES”，则向所有参与者发送 <strong>“正式提交”(commit)请求</strong>，此时所有参与者会释放资源并返回“ACK”，接收到所有“ACK”后协调者向上报告完成请求；如果收到“NO”，则向所有参与者发送 <strong>“回滚”(rollback)请求</strong>，此时所有参与者执行“回滚”并释放资源，返回“ACK”，接收到所有“ACK”后协调者上报请求失败或超时。<br>(ACK指 Acknowledgement即确认字符，表示操作已经完成)</p>
+<p><strong>问题</strong>：<br>1、由于在执行期间所有参与者都处于阻塞状态，直至协调者发指令，所有参与者节点都占用着资源，对性能影响较大（<strong>同步阻塞</strong>）<br>2、一旦协调者出现故障，无法发出指令时会导致所有参与者一直处于等待状态，对性能影响较大（<strong>协调者宕机</strong>）<br>3、在二阶段的指令发出后，如果此时网络故障会导致一部分参与者无法收到指令，导致数据不一致（<strong>消息丢失</strong>）<br>4、任何一个参与者响应未收到，则整个事物失败（<strong>容错率低</strong>）</p>
+<h2 id="3PC（三阶段提交协议）"><a href="#3PC（三阶段提交协议）" class="headerlink" title="3PC（三阶段提交协议）"></a>3PC（三阶段提交协议）</h2><p>1、<strong>提交询问阶段(canCommit)<strong>：<br>协调者节点得到请求后，向所有参与者发送提交询问，此时对于每个参与者，如果可以执行请求则立刻返回“YES”（</strong>注意此时不执行</strong>），如果不能则立刻返回“NO”<br>2、<strong>预提交阶段(preCommit)<strong>：<br>经过一段时间后，如果协调者接收到了所有“YES”，则向所有参与者发送 “预提交”(preCommit)请求，此时对于每个参与者开始执行，写入undo和redo日志，</strong>如果在执行过程中出错则返回“NO”</strong>，执行完成后返回“ACK”<br>3、<strong>最终提交阶段(doCommit)<strong>：<br>又经过了一段时间后，如果协调者接收到了所有“ACK”，则向所有参与者发送“提交”请求，此时所有参与者会释放资源并返回“ACK”，接收到所有“ACK”后协调者向上报告完成请求；如果收到“NO”或者在时限内没收到所有“YES”（</strong>3PC引入超时机制</strong>），则向所有参与者发送 <strong>“回滚”(rollback)请求</strong>，此时所有参与者执行“回滚”并释放资源，返回“ACK”，接收到所有“ACK”后协调者上报请求失败或超时。</p>
+<p><strong>问题：</strong><br>1、降低阻塞范围，但仍然存在<br>2、协调者宕机的问题仍然存在<br>3、容错率问题未得到改善</p>
+<h2 id="Paxos算法"><a href="#Paxos算法" class="headerlink" title="Paxos算法"></a>Paxos算法</h2><p>无论2PC还是3PC都无法彻底解决分布性一致性问题以及容错率都较低，于是便引出了Paxos算法。</p>
+<p><strong>概述：</strong><br><strong>Paxos算法是基于消息传递且具有高度容错性的一致性算法。</strong><br>其解决的问题就是在一旦发生异常（包括消息的延迟、丢失、重复、乱序等）的分布式系统中，快速且正确地在集群内部对某个决议达成一致。<br>在每一条指令时，都要执行一次一致性算法。<br>假如在分布式系统中初始是各个节点的数据是一致的，每个节点都顺序执行系列操作，然后每个节点最终的数据还是一致的。<br>Paxos算法的前提是信道可靠，即发出的信号不会被篡改。通常来说，大多数系统都是部署在一个局域网之中，并且存在一套用于校验文件完整性的算法，所以在实际工程中可以假设信道可靠。</p>
+<p><strong>相关概念：</strong><br>在Paxos算法中，存在三种角色（一个进程可以同时充当多种角色）：<br><strong>提议者</strong>（Proposer）负责提出提案<br><strong>接受者</strong>（Acceptor）负责对提案做出裁决（是否接受）<br><strong>学习者</strong>（Learner）负责学习提案结果<br><strong>提案</strong>（Proposal）每一个提案都对应一个value（指令）</p>
+<p><strong>过程：</strong><br><strong>阶段一</strong>（prepare阶段）<br>Proposer选择一个编号为N的提案，并向半数以上的Acceptor发送编号为N的Prepare请求<code>Prepare(N)</code></p>
+<p>每个Acceptor中有一个<code>maxN</code>参数，记录着到<strong>目前为止接受过的最大编号提案的编号</strong>。在收到<code>Prepare(N)</code>后:<br><code>if(maxN==null)</code> 回应<code>pok</code>（prepare ok）<br><code>if(maxN&gt;N)</code> 不回应或者回复<code>error1</code><br><code>if(maxN&lt;N)</code> <code>maxN=N</code>并回应<code>pok</code></p>
+<p><strong>阶段二</strong>（accept阶段）<br>Proposer如果没收到半数以上的<code>pok</code>，则更换提案（更大N值）回到阶段一。<br>如果收到了半数以上的<code>pok</code>，则向半数以上的Acceptor发送包含<code>&lt;N,value&gt;</code>的Accept请求<code>Accept(N)</code></p>
+<p>Acceptor在收到<code>Accept(N)</code>后<br><code>if(maxN&gt;N)</code> 不回应或者回复<code>error2</code><br><code>if(maxN&lt;=N)</code> 回应<code>aok</code> （accept ok）</p>
+<p>Proposer如果没收到半数以上的<code>aok</code>，则更换提案（更大N值）回到阶段一。<br>如果收到了半数以上的<code>aok</code>，则向所有的Learner发送<code>value</code> 算法结束。</p>
+<h1 id="Chubby系统"><a href="#Chubby系统" class="headerlink" title="Chubby系统"></a>Chubby系统</h1><p>Chubby是一个“<strong>高可用的、序列化的分布式锁服务组件</strong>”。<br><strong>Chubby的底层一致性实现就是以Paxos算法为基础的</strong>。<br>Chubby系统架构分为了两部分：<strong>服务端</strong>被称为Chubby cell和<strong>客户端</strong>（Client）<br><strong>客户端：</strong> 包含了名为Chubby library接口，调用后可以在Chubby cell上创建文件并实现锁的功能</p>
+<h2 id="Chubby-cell"><a href="#Chubby-cell" class="headerlink" title="Chubby cell"></a>Chubby cell</h2><p>一个Chubby cell由五台服务器组成，可以支持整个数据中心的锁服务，其中每台服务器被称作<strong>副本</strong>（replicas）<br>在Chubby cell工作时，先选出一个master服务器，所有的服务器都将维护同一份DB拷贝，但只有master能够接受客户端的请求对DB进行读写，其余四个副本只能接受master的指令对备份DB进行修改。<br>一旦master出现故障，其他副本将立刻选出一个新的master进行替代。</p>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>Chubby的底层实际上是一个文件系统，提供了一个命名空间，里面包括了目录和小文件。每个目录或者文件可以当成一个锁，读写文件的操作都是原子的。Chubby的文件系统由于它的特殊用途做了很多的简化。例如它不支持文件的转移，不记录文件最后访问时间等等。</p>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2023/03/21/Blog-Test/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a type="button" class="btn btn-default disabled">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-08-10 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2023 Hengist's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

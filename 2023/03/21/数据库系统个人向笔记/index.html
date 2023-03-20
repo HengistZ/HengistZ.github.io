@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>数据库系统个人向笔记 | Hengist&#39;s Blog</title>
+  <meta name="author" content="Hengist">
+  
+  <meta name="description" content="基本概念数据库： 由一个数据库管理系统(DBMS, Database Management System)所管理的一个数据集合
+数据库管理系统：功能：持久的大量的数据存储、用户接口和编程接口、事务管理（共享数据：多用户并发访问避免互相影响和损坏数据）举例：Oracle, MySQL
+数据定义语言(DDL, Data Definition Language): 创建数据库并确定其模式(Schema)。
+数据库模式(Schema): 是一组用DDL表达的语句集合描述的数据库逻辑结构。数据独立性依靠模式分级及模式之间的影像实现。
+数据查询语言(DQL, Data Query Language)、数据操作语言(DML, Data Manipulation Language): 依据数据库模式查询或更新数据
+有关数据库的三方面工作设计(design): 如何建立一个有用的数据库。需求分析，数据建模，关系设计。
+编程(programming): 在数据库设计基础上，如何进行各种查询和计算操作。
+实现:implementation): 如何构建一个数据库管理系统(DBMS)，独立于特定应用"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="数据库系统个人向笔记"/>
+  <meta property="og:site_name" content="Hengist&#39;s Blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hengist&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Hengist&#39;s Blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 数据库系统个人向笔记</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>数据库：</strong> 由一个<strong>数据库管理系统</strong>(DBMS, Database Management System)所管理的一个<strong>数据集合</strong></p>
+<p><strong>数据库管理系统</strong>：<br>功能：<strong>持久的大量的数据存储、用户接口和编程接口、事务管理</strong>（共享数据：多用户并发访问避免互相影响和损坏数据）<br>举例：Oracle, MySQL</p>
+<p><strong>数据定义语言(DDL, Data Definition Language):</strong> 创建数据库并确定其模式(Schema)。</p>
+<p><strong>数据库模式(Schema):</strong> 是一组用DDL表达的语句集合描述的数据库逻辑结构。<br>数据独立性依靠模式分级及模式之间的影像实现。</p>
+<p><strong>数据查询语言(DQL, Data Query Language)、数据操作语言(DML, Data Manipulation Language):</strong> 依据数据库模式查询或更新数据</p>
+<h2 id="有关数据库的三方面工作"><a href="#有关数据库的三方面工作" class="headerlink" title="有关数据库的三方面工作"></a>有关数据库的三方面工作</h2><p><strong>设计(design):</strong> 如何建立一个有用的数据库。需求分析，数据建模，关系设计。</p>
+<p><strong>编程(programming):</strong> 在数据库设计基础上，如何进行各种查询和计算操作。</p>
+<p><strong>实现:implementation):</strong> 如何构建一个数据库管理系统(DBMS)，独立于特定应用</p>
+<h1 id="数据库管理系统结构"><a href="#数据库管理系统结构" class="headerlink" title="数据库管理系统结构"></a>数据库管理系统结构</h1><h2 id="查询指令、数据及模式更新指令传入查询处理器"><a href="#查询指令、数据及模式更新指令传入查询处理器" class="headerlink" title="查询指令、数据及模式更新指令传入查询处理器"></a>查询指令、数据及模式更新指令传入查询处理器</h2><p><img src="https://img-blog.csdnimg.cn/28de813773a841e5a77b20ff2df3652e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASGVuZ2lzdF9a,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="数据存储器："><a href="#数据存储器：" class="headerlink" title="数据存储器："></a>数据存储器：</h2><p>存储数据和元数据，文件是主要方式 。</p>
+<p>**元数据(metadata)**：关于数据的结构的信息。数据按元数据规范的格式存储。</p>
+<p>**索引(index)**：一种数据结构，以快速查找数据项(item)<br>索引是数据的一部分，而对索引的说明则是元数据的一部分。</p>
+<p>Hash表是早期建立索引的主要方法，现一般使用B(Balance)树。</p>
+<h2 id="存储管理器"><a href="#存储管理器" class="headerlink" title="存储管理器"></a>存储管理器</h2><p>对数据读写进行管理，包含<strong>文件管理</strong>和<strong>缓冲区管理</strong>。依赖于特定操作系统</p>
+<p><strong>文件(files)管理：</strong> 磁盘文件分块(1~16K)</p>
+<p><strong>缓冲区(buffer)管理：</strong> 文件到内存的映像(1~4K)</p>
+<h2 id="查询处理器"><a href="#查询处理器" class="headerlink" title="查询处理器"></a>查询处理器</h2><p>将SQL的命令预处理，将其转变为对存储数据的操作序列</p>
+<p>主要问题是优化</p>
+<h2 id="事物管理器"><a href="#事物管理器" class="headerlink" title="事物管理器"></a>事物管理器</h2><p>负责系统数据的完整性。保证并发运行的多个SQL命令的相互独立、保证数据的安全性。</p>
+<p>操作日志(log)</p>
+<p><strong>事物(Transaction):</strong> 一组操作作为一个单元，按次序全部执行。<br>事物的特性：ACID</p>
+<ol>
+<li><strong>原子性(Atomicity):</strong> 一组操作要么全部执行，要么都不执行。</li>
+<li><strong>一致性(Consistency):</strong> 确保操作的正确执行</li>
+<li><strong>隔离性(Isolation):</strong> 多个事物并发运行时相互独立</li>
+<li><strong>持久性(Durability):</strong> 事物完成后即保存不会丢失</li>
+</ol>
+<p>通过 <strong>加锁(locking)</strong> 、 <strong>日志(logging)</strong> 和 <strong>提交(commit)</strong> 等方式保持事务特性</p>
+<p><img src="https://img-blog.csdnimg.cn/4651821540934ed98122da27be486258.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASGVuZ2lzdF9a,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="在这里插入图片描述"><br><strong>客户端Client:</strong> 请求SQL服务的软件进程。<br><strong>服务器Server:</strong> 提供SQL服务的软件进程。<br>一个服务器可支持多个数据库；一个数据库包含多个关系。</p>
+<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><p><strong>数据模型(Data model)是用于描述数据或信息的标记</strong></p>
+<p>一般由三部分组成：<strong>数据结构(Structure of the data)、操作系统(Operation on the data)、数据上的约束(Constraint on the data)</strong></p>
+<p>两种典型数据模型：<strong>关系数据模型、半结构化数据模型(XML)</strong></p>
+<h2 id="关系数据模型"><a href="#关系数据模型" class="headerlink" title="关系数据模型"></a>关系数据模型</h2><p><strong>一种基于表的数据模型</strong><br>由关系数据模型衍生出的面向表的操作集合是<strong>关系代数</strong><br>是数据库管理系统采用的最多的一种数据模型。</p>
+<p><strong>高效性和易用性：</strong></p>
+<ol>
+<li>提供简单有效的方法对数据进行建模，而且功能全面.</li>
+<li>提供了一套有限但很有效的操作集合</li>
+<li>可以使用高级的程序语言</li>
+</ol>
+<p>例如：<br><img src="https://img-blog.csdnimg.cn/653e63ee22a74fd5b4a349432c6ceec1.png#pic_center" alt="在这里插入图片描述"></p>
+<p><strong>关系名:</strong> 整张表的名字，例如上图为“movie”</p>
+<p><strong>属性:</strong> （列名）在每一列的顶部(Head)为该列命名。</p>
+<p><strong>关系模式:</strong> 关系名及属性的集合，也是关系数据库的模式(Schema)<br>表示方法：<code>Movies(title，year，length，genre);</code></p>
+<p><strong>元组:</strong> 除第一行外其余的行<br>表示方法：<code>(Gone with the wind，1939，231，drama);</code></p>
+<p><strong>域:</strong> 包含某一列任一分量值的一种不可分割的元素类型，例如：interger或string</p>
+<ol>
+<li>可变长度或固定长度字符串。</li>
+<li>固定或可变长度的位串。</li>
+<li>BOOLEAN表示具有逻辑类型的值。</li>
+<li>类型INT和INTEGER表示典型的整数值。</li>
+<li>浮点值能通过不同的方法表示。</li>
+<li>日期和时间分别通过DATA和TIME数据类型来表示。<br>包含域的关系模式：<code>Movies(title：string，year：integer，length：integer，genre：string);</code></li>
+</ol>
+<p><strong>关系:</strong> 元组的集合，而不是列表，所以<strong>行的顺序不重要</strong>，同理<strong>列的顺序也不重要</strong>。</p>
+<p><strong>关系的实例:</strong> 在关系给定的情况下元组的集合，当前关系的实例被称为当前实例。</p>
+<p><strong>键(key):</strong> 关系中一个或多个属性的集合，保证关系实例中任意两个元组在该属性集上的取值不同。<br>键通过属性下划线表示：<code>Movies(title，year，length，genre);</code></p>
+<h2 id="半结构化数据模型"><a href="#半结构化数据模型" class="headerlink" title="半结构化数据模型"></a>半结构化数据模型</h2><p><strong>基于树或者图，而非表或数组</strong></p>
+<p><strong>XML利用一系列分层嵌套的标签元素来表示数据（可理解为一种隐含的树结构）</strong></p>
+<h2 id="其他类型数据模型"><a href="#其他类型数据模型" class="headerlink" title="其他类型数据模型"></a>其他类型数据模型</h2><p>除前两者之外，数据库的数据模型还有：<strong>对象关系模型、纯面向对象的数据库模型、层次模型和网状模型等</strong></p>
+<h1 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h1><p>定义：由关系数据模型衍生出的面向表的操作集合<br>关系代数的表达式被称为<strong>查询</strong></p>
+<h2 id="三个基本操作-并、交、差-："><a href="#三个基本操作-并、交、差-：" class="headerlink" title="三个基本操作(并、交、差)："></a>三个基本操作(并、交、差)：</h2><ol>
+<li><strong>R∪S 表示关系R和S的并，所得到的结果关系的元素是来<br>自R或者S或者在R和S中都出现过，但是对于最后一<br>种情况，结果关系中的这个元素只出现一次。</strong></li>
+<li><strong>R∩S 表示关系R和S的交，就是同时在R和S中存在的元素<br>的集合。</strong></li>
+<li><strong>R – S 是关系R和S的差，它是由在R中但不在S中出现的元<br>素构成的集合</strong></li>
+</ol>
+<p><strong>其中R和S必须是具有同样属性集合的表，各个属性的域(数据类型)也必须相同</strong></p>
+<h2 id="投影"><a href="#投影" class="headerlink" title="投影"></a>投影</h2><p>用于从原关系R选出一部分<strong>列</strong>来生成一个新的关系。</p>
+<p>例如关系Movies<br><img src="https://img-blog.csdnimg.cn/fb1f295d326a471fad6a65086f5d68c1.png" alt="在这里插入图片描述"></p>
+<p>进行了如下操作：<br><img src="https://img-blog.csdnimg.cn/b078a4ffb3f84f3ba486248f70449a3f.png" alt="在这里插入图片描述"></p>
+<p>结果如下：<br><img src="https://img-blog.csdnimg.cn/3a67c8816aa04034a6e4157e6162fea7.png" alt="在这里插入图片描述"></p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>用于从关系R中选出<strong>元组的子集合</strong>。<br><img src="https://img-blog.csdnimg.cn/d0b744ff87a64e3aab2dcd5604a0db39.png" alt="在这里插入图片描述"><br>其中包含关于属性的条件C，若有多个属性则用<code>AND</code>相连<br>字符串用单引号，大于小于等于均用数学符号<br>例如：<img src="https://img-blog.csdnimg.cn/97f3bc6433d34cf59d4da8b8c30c2d09.png" alt="在这里插入图片描述"></p>
+<h2 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h2><p>又名叉积或者做积，记为R<em>S，得到元组的总数量为R与S元组的数量的*<em>乘积</em></em><br>例如：<img src="https://img-blog.csdnimg.cn/3a92604b039849ffadeb398119ecc4f3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASGVuZ2lzdF9a,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="自然连接"><a href="#自然连接" class="headerlink" title="自然连接"></a>自然连接</h2><p>表示为：<img src="https://img-blog.csdnimg.cn/846445ddb60f4d148335dc2d74645041.png" alt="在这里插入图片描述"><br>将R与S中有<strong>共同属性</strong>的元组选出并连接</p>
+<h2 id="Θ连接"><a href="#Θ连接" class="headerlink" title="Θ连接"></a>Θ连接</h2><p><img src="https://img-blog.csdnimg.cn/ed277bcaf0504543bc28b3c02638021b.png" alt="在这里插入图片描述"></p>
+<ol>
+<li>先得到R和S的积。</li>
+<li>在得到的关系中寻找满足条件C的元组。</li>
+</ol>
+<p><strong>在关系代数中，可以在子表达式上应用算符来构造新的关系代数表达式，必要的时候用括号把操作数分割开。</strong></p>
+<h2 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h2><p><img src="https://img-blog.csdnimg.cn/17cc2b4e27d54b19a3431d1951ea408f.png" alt="在这里插入图片描述"><br>将关系名从R改为S，属性名依次为A1~An</p>
+<p>简单创建并赋值</p>
+<h1 id="数据库相关编程语言"><a href="#数据库相关编程语言" class="headerlink" title="数据库相关编程语言"></a>数据库相关编程语言</h1><p><strong>可以选中一部分语句执行</strong></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 这是一行注释</span><br><span class="line"><span class="comment">/* 这是一块注释</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="DDL：数据定义语言"><a href="#DDL：数据定义语言" class="headerlink" title="DDL：数据定义语言"></a>DDL：数据定义语言</h2><h3 id="定义关系："><a href="#定义关系：" class="headerlink" title="定义关系："></a>定义关系：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Movies(</span><br><span class="line">	title <span class="type">CHAR</span>(<span class="number">100</span>),</span><br><span class="line">	<span class="keyword">year</span> <span class="type">INT</span>,</span><br><span class="line">	length <span class="type">INT</span>,</span><br><span class="line">	genre <span class="type">CHAR</span>(<span class="number">10</span>),</span><br><span class="line">	studioName <span class="type">CHAR</span>(<span class="number">30</span>),</span><br><span class="line">	producerC <span class="type">INT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>若只有一个字符则用CHAR(1)</p>
+<h3 id="删除关系："><a href="#删除关系：" class="headerlink" title="删除关系："></a>删除关系：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> Movies;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="修改属性："><a href="#修改属性：" class="headerlink" title="修改属性："></a>修改属性：</h3><p>使用<code>ALTER TABLE</code>关键词</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> Movies <span class="keyword">ADD</span> number <span class="type">CHAR</span>(<span class="number">16</span>);</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> MOvies <span class="keyword">DROP</span> genre;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="默认值："><a href="#默认值：" class="headerlink" title="默认值："></a>默认值：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">studioName <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">DEFAULT</span> <span class="string">&#x27;unlisted&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="键："><a href="#键：" class="headerlink" title="键："></a>键：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar(</span><br><span class="line">	name <span class="type">CHAR</span>(<span class="number">30</span>) <span class="keyword">PRIMARY</span> KEY</span><br><span class="line">);</span><br><span class="line">#<span class="keyword">or</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> MovieStar(</span><br><span class="line">	name <span class="type">CHAR</span>(<span class="number">30</span>)，</span><br><span class="line">	<span class="keyword">PRIMARY</span> KEY (name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="DQL：数据查询语言"><a href="#DQL：数据查询语言" class="headerlink" title="DQL：数据查询语言"></a>DQL：数据查询语言</h2><h3 id="限制数据库："><a href="#限制数据库：" class="headerlink" title="限制数据库："></a>限制数据库：</h3><p>在查询语句的开头限制数据库（可以不写）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名;</span><br></pre></td></tr></table></figure>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 查询列表 <span class="keyword">from</span> 表名;</span><br></pre></td></tr></table></figure>
+<p>查询列表可能是常量值、表达式、函数（的返回值）；</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">100</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="string">&#x27;john&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">method</span>();<span class="operator">/</span><span class="operator">/</span>先执行函数再查询返回值</span><br></pre></td></tr></table></figure>
+<p>选中表中所有列：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名;</span><br></pre></td></tr></table></figure>
+<p>可以在列名加上&#96;&#96;，效果相同</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> `name` <span class="keyword">from</span> tableA;</span><br><span class="line"><span class="keyword">select</span> name <span class="keyword">from</span> tableA;</span><br></pre></td></tr></table></figure>
+<h4 id="起别名-as"><a href="#起别名-as" class="headerlink" title="起别名: as"></a>起别名: as</h4><p>也可以省略as</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> cname <span class="keyword">as</span> <span class="string">&#x27;course name&#x27;</span></span><br><span class="line"><span class="keyword">from</span> courses <span class="keyword">as</span> c;</span><br><span class="line"><span class="keyword">select</span> cname <span class="string">&#x27;course name&#x27;</span></span><br><span class="line"><span class="keyword">from</span> courses c;</span><br></pre></td></tr></table></figure>
+<h4 id="去重：去除查询结果中的重复项"><a href="#去重：去除查询结果中的重复项" class="headerlink" title="去重：去除查询结果中的重复项"></a>去重：去除查询结果中的重复项</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> cno</span><br><span class="line"><span class="keyword">from</span> students;</span><br></pre></td></tr></table></figure>
+<h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 查询列表</span><br><span class="line"><span class="keyword">from</span> 表名</span><br><span class="line"><span class="keyword">where</span> 查询条件;</span><br></pre></td></tr></table></figure>
+<p><strong>条件运算符：&gt; &lt; &#x3D;(注意是单等号) !&#x3D; &gt;&lt;(不等于)</strong></p>
+<p><strong>逻辑运算符：and(&amp;&amp;) or(||) not(!)</strong></p>
+<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><p><strong>between and</strong><br>包含临界值<br><strong>in</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> id <span class="keyword">in</span>(<span class="number">1</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>不能使用通配符<br><strong>is null</strong><br>判断是否为空</p>
+<h4 id="like"><a href="#like" class="headerlink" title="like"></a>like</h4><p>包含a的name</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> `name` <span class="keyword">like</span> <span class="string">&#x27;%a%&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>其中，%是通配符，如果只查开头就去掉前面的%</p>
+<p><strong>通配符：</strong><br>**%**：任意多个字符（可以为0）<br><strong>_</strong> : 任意单个字符<br>如果查询%或者_则需要用转译符</p>
+<p>自定义转义符：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> `name` <span class="keyword">like</span> <span class="string">&#x27;a$_b&#x27;</span> <span class="keyword">escape</span> <span class="string">&#x27;$&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 查询列表</span><br><span class="line"><span class="keyword">from</span> 表名</span><br><span class="line"><span class="keyword">where</span> 查询条件</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 列名集合;</span><br></pre></td></tr></table></figure>
+<p>默认升序，降序后加desc</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 列名集合 <span class="keyword">asc</span>;</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 列名集合 <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数"></a>单行函数</h3><h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>int length(string s) 字符串长度<br><strong>string concat(string s1,string s2,…)</strong> 拼接字符串<br>string upper(string s) string lower(string s) 转大写、转小写<br><strong>string substr(string s, int a, int b) 子串，b可以省略</strong><br><strong>注意：索引从1开始</strong><br>int instr(string s1, string s2)子串的索引<br>sreing trim(string s1 from string s2)去前后s1，s1省略就是去空格<br>string Lpad(string s1 ,int a ,string s2) string Rpad(string s1 ,int a ,string s2)用s2将s1填充到a个字符(左右填充)<br>string replace(string s1 ,string s2 ,string s3)将s1中所有s2替换成s3</p>
+<h4 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h4><p>int round(double a) 四舍五入<br>double round(double a, int n) 保留位数（四舍五入）<br>int ceil(double a)向上取整<br>int floor(double a)向下取整<br>double truncate(double a ,int n)保留位数</p>
+<h4 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h4><p><strong>格式：%Y-%m-%d</strong><br>Date-Time now()返回当前日期和时间<br>Date curdate()返回当前日期<br>Time curtime()返回当前时间<br>int year(Date d)返回年（月、日同理）<br>string monthname(Date d)返回月名字<br><strong>日期格式符：</strong><br>%Y四位年份 %y两位年份 %m月 %H时 %i分 %s秒</p>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><p><strong>if(条件,A,B)</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> 属性名</span><br><span class="line"><span class="keyword">when</span> 条件<span class="number">1</span> <span class="keyword">then</span> 语句<span class="number">1</span></span><br><span class="line"><span class="keyword">when</span> 条件<span class="number">1</span> <span class="keyword">then</span> 语句<span class="number">23</span></span><br><span class="line"><span class="keyword">when</span> 条件<span class="number">1</span> <span class="keyword">then</span> 语句<span class="number">3</span></span><br><span class="line"><span class="keyword">else</span> 语句<span class="number">4</span></span><br></pre></td></tr></table></figure>
+<h3 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h3><p><strong>sum()</strong> 求和<br><strong>avg()</strong> 求平均<br>min()最小值 max()最大值 count()个数<br><strong>count(*)</strong> 返回行数，等效于count(常量)</p>
+<h4 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 查询列表,属性</span><br><span class="line"><span class="keyword">from</span> 表名</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 属性;</span><br></pre></td></tr></table></figure>
+<h4 id="having"><a href="#having" class="headerlink" title="having"></a>having</h4><p>二次筛选（分组后筛选）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>),属性</span><br><span class="line"><span class="keyword">from</span> 表名</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 属性</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>)<span class="operator">&gt;</span><span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="DML：数据操作语言"><a href="#DML：数据操作语言" class="headerlink" title="DML：数据操作语言"></a>DML：数据操作语言</h2>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2023/03/21/软件工程导论学习笔记/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2023/03/21/计算机网络个人向笔记/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-03-21 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2023 Hengist's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

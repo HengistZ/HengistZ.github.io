@@ -1,0 +1,472 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Java常用API个人向总结 | Hengist&#39;s Blog</title>
+  <meta name="author" content="Hengist">
+  
+  <meta name="description" content="基础语法goto1234outer:for()&amp;#123;  break outer;&amp;#125;
+
+
+
+数据类型1out.println(&amp;quot;\&amp;quot;Hello\&amp;quot;&amp;quot;)
+
+
+
+Math&amp;#x2F;类型转换类型转换
+1(int)c
+
+
+
+经典四舍五入
+12345double data = 3.02;//利用字符串格式化的方式实现四舍五入,保留1位小数String result = String.format(&amp;quot;%.1f&amp;quot;,data);//1代表小数点后面的位数, 不足补0。f代表数据是浮点类型。保留2位小数就是“%.2f”，依此累推。System.out.println(result);//输出3.0"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Java常用API个人向总结"/>
+  <meta property="og:site_name" content="Hengist&#39;s Blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hengist&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Hengist&#39;s Blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Java常用API个人向总结</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">outer:</span><br><span class="line"><span class="keyword">for</span>()&#123;</span><br><span class="line">  <span class="keyword">break</span> outer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out.println(<span class="string">&quot;\&quot;Hello\&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Math-x2F-类型转换"><a href="#Math-x2F-类型转换" class="headerlink" title="Math&#x2F;类型转换"></a>Math&#x2F;类型转换</h2><p><strong>类型转换</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="type">int</span>)c</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>经典四舍五入</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">data</span> <span class="operator">=</span> <span class="number">3.02</span>;</span><br><span class="line"><span class="comment">//利用字符串格式化的方式实现四舍五入,保留1位小数</span></span><br><span class="line"><span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> String.format(<span class="string">&quot;%.1f&quot;</span>,data);</span><br><span class="line"><span class="comment">//1代表小数点后面的位数, 不足补0。f代表数据是浮点类型。保留2位小数就是“%.2f”，依此累推。</span></span><br><span class="line">System.out.println(result);<span class="comment">//输出3.0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>double四舍五入转换成long</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> b=Math.round(<span class="type">double</span> a);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>向上&#x2F;向下取整</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> Math.ceil(<span class="type">double</span> d);<span class="comment">//向上取整</span></span><br><span class="line"><span class="type">int</span> Math.floor(<span class="type">double</span> d);<span class="comment">//向下取整</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>保留小数位数</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(String.formate(<span class="string">&quot;%.1f&quot;</span>,d));<span class="comment">//四舍五入保留一位小数</span></span><br><span class="line">System.out.println(<span class="string">&quot;%.1f&quot;</span>,d);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>进制转换</strong></p>
+<p>r进制转10进制</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> Integer.parseInt(String str,<span class="type">int</span> r);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>10进制转2&#x2F;8&#x2F;16进制</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=Integer.toBinaryString(n);</span><br><span class="line">Integer.toOctalString(n);</span><br><span class="line">Integer.toHexString(n));</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="BigDecimal"><a href="#BigDecimal" class="headerlink" title="BigDecimal"></a>BigDecimal</h2><h2 id="BigInterger"><a href="#BigInterger" class="headerlink" title="BigInterger"></a>BigInterger</h2><p>大数，理论无限大</p>
+<p><strong>定义：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BigInterger a=sc.nextBigInterger();</span><br><span class="line"></span><br><span class="line">String s=<span class="string">&quot;100000&quot;</span>;</span><br><span class="line">BigInterger b=<span class="keyword">new</span> <span class="title class_">BigInterger</span>(s);</span><br><span class="line"><span class="comment">//非十进制的字符串</span></span><br><span class="line">BigInterger b=<span class="keyword">new</span> <span class="title class_">BigInterger</span>(s,radix);</span><br><span class="line"><span class="comment">//int转bigInterger</span></span><br><span class="line"><span class="type">int</span> i=<span class="number">10</span>;</span><br><span class="line">BigInterger c=BigInterger.valueOf(i);</span><br></pre></td></tr></table></figure>
+
+<p><strong>运算</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c=a.add(b);<span class="comment">//a+b</span></span><br><span class="line">c=a.substract(b);<span class="comment">//a-b</span></span><br><span class="line">c=a.multiply(b);<span class="comment">//a*b</span></span><br><span class="line">c=a.divide(b);<span class="comment">//a/b</span></span><br><span class="line">c=a.mod(b);<span class="comment">//a%b</span></span><br><span class="line">a.compareTo(b);<span class="comment">//1大于0等于-1小于</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>类型转换：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s=a.toString();</span><br><span class="line"><span class="comment">//转换成非十进制字符串</span></span><br><span class="line">String s=a.toString(radix);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> i=a.intValue();</span><br><span class="line"><span class="type">double</span> d=a.doubleValue();</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Date-x2F-SimpleDateFormate"><a href="#Date-x2F-SimpleDateFormate" class="headerlink" title="Date&#x2F;SimpleDateFormate"></a>Date&#x2F;SimpleDateFormate</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>);<span class="comment">//年-月-日</span></span><br><span class="line">Date today=sdf.parse(String todayStr);</span><br><span class="line">Date tomorrow=<span class="keyword">new</span> <span class="title class_">Date</span>(today.getTime()+<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>)；<span class="comment">//毫秒</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="一维容器"><a href="#一维容器" class="headerlink" title="一维容器"></a>一维容器</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] array=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="type">int</span>[] array=<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] array=&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//复制数组</span></span><br><span class="line"><span class="type">int</span>[] arrB = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">6</span>];</span><br><span class="line">System.arraycopy(arr, <span class="number">0</span>, arrB, <span class="number">0</span>, arr.length);</span><br><span class="line"><span class="type">int</span>[] arrC = Arrays.copyOf(arr, arr.length);</span><br></pre></td></tr></table></figure>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[][] array=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>][<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Collections-集合"><a href="#Collections-集合" class="headerlink" title="Collections 集合"></a>Collections 集合</h2><h3 id="ArrayList-集合"><a href="#ArrayList-集合" class="headerlink" title="ArrayList 集合"></a>ArrayList 集合</h3><p>一个大小可变的数组，且允许null元素、可以自动增长<br>比普通数组慢一些，但支持灵活插入与删除元素</p>
+<p>Vector同一时间允许一个线程进行访问，效率较低，但是不会发生并发错误。</p>
+<p>ArrayList同一时间允许多个线程进行访问，效率高，但是可能会发生并发错误。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line"><span class="keyword">public</span> ArrayList&lt;String&gt; list=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">public</span> ArrayList&lt;String&gt; list=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(oldList);</span><br><span class="line"><span class="comment">//通用</span></span><br><span class="line">list.size();</span><br><span class="line">list.clear();</span><br><span class="line">list.contains(<span class="string">&quot;element&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取元素</span></span><br><span class="line">list.get(index);</span><br><span class="line"><span class="comment">//添加元素</span></span><br><span class="line">list.add(<span class="string">&quot;element&quot;</span>);</span><br><span class="line">list.add(index,<span class="string">&quot;element&quot;</span>);<span class="comment">//特定位置插入</span></span><br><span class="line">Collections.addAll(list,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>);<span class="comment">//依次添加多个</span></span><br><span class="line">Collections.addAll(list,array);<span class="comment">//用于数组转集合</span></span><br><span class="line">list.addAll(listB);</span><br><span class="line"><span class="comment">//删除元素</span></span><br><span class="line">list.remove(index);</span><br><span class="line">list.remove(<span class="string">&quot;element&quot;</span>);</span><br><span class="line"><span class="comment">//注意，对于LinkedList&lt;Integer&gt;，remove(object)如下：</span></span><br><span class="line">list.remove((Integer)element);</span><br><span class="line">list.remove(listB);</span><br><span class="line"><span class="comment">//修改元素</span></span><br><span class="line">list.set(<span class="number">0</span>,<span class="string">&quot;element&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//查找元素</span></span><br><span class="line">list.indexOf(<span class="string">&quot;element&quot;</span>);</span><br><span class="line"><span class="comment">//子链表，注意只返回list</span></span><br><span class="line">List&lt;String&gt; listB = list.subList(start,end);</span><br><span class="line"><span class="comment">//集合转数组</span></span><br><span class="line">String[] array =list.toArray(<span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">  System.out.println(list.get(i));</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//foreach</span></span><br><span class="line"><span class="keyword">for</span>(String string:list)&#123;</span><br><span class="line">  System.out.println(string);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//迭代器</span></span><br><span class="line"><span class="keyword">for</span>(Iterator&lt;String&gt; iter=list.iterator();iter.hasNext();)&#123;</span><br><span class="line">    System.out.println(iter.next());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 在使用迭代器时不允许增删</span></span><br><span class="line"><span class="comment"> * iter.remove(); 迭代器删除</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="LinkedList-链表"><a href="#LinkedList-链表" class="headerlink" title="LinkedList 链表"></a>LinkedList 链表</h3><p>相比ArrayList，添加删除更快，查找遍历更慢</p>
+<p><strong>注意，LinkList用for循环遍历特别慢，可以用迭代器或者转数组读</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">LinkedList&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"><span class="comment">//其余同ArrayList，只写不一样的</span></span><br><span class="line"><span class="comment">//添加首尾元素</span></span><br><span class="line">list.addFirst(<span class="string">&quot;element&quot;</span>);</span><br><span class="line">list.addLast(<span class="string">&quot;element&quot;</span>);</span><br><span class="line"><span class="comment">//删除首尾元素</span></span><br><span class="line">list.removeFirst();</span><br><span class="line">list.removeLast();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Stack-栈"><a href="#Stack-栈" class="headerlink" title="Stack 栈"></a>Stack 栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">Stack&lt;String&gt; stack=<span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line"><span class="comment">//其余同ArrayList，只写不一样的</span></span><br><span class="line"><span class="comment">//压栈</span></span><br><span class="line">stack.push(<span class="string">&quot;element&quot;</span>);</span><br><span class="line"><span class="comment">//弹栈</span></span><br><span class="line">stack.pop();</span><br><span class="line"><span class="comment">//获取栈顶</span></span><br><span class="line">stack.peek();</span><br><span class="line"><span class="comment">//查找</span></span><br><span class="line">stack.search(<span class="string">&quot;element&quot;</span>);<span class="comment">//等效于indexOf()</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Queue-队列"><a href="#Queue-队列" class="headerlink" title="Queue 队列"></a>Queue 队列</h2><p><strong>先进先出</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">Queue&lt;String&gt; queue=<span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();<span class="comment">//注意是LinkList构造出来的</span></span><br><span class="line"><span class="comment">//通用</span></span><br><span class="line">queue.size();</span><br><span class="line">queue.isEmpty();</span><br><span class="line">queue.contains(<span class="string">&quot;element&quot;</span>);</span><br><span class="line">queue.clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">//入队（到队尾）</span></span><br><span class="line">queue.add(<span class="string">&#x27;element&#x27;</span>);<span class="comment">//队列满抛异常</span></span><br><span class="line">queue.offer(<span class="string">&#x27;element&#x27;</span>);<span class="comment">//返回true，队列满返回false</span></span><br><span class="line">queue.put(<span class="string">&#x27;element&#x27;</span>);<span class="comment">//队列满阻塞</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//出队（从对头）</span></span><br><span class="line">queue.remove();<span class="comment">//队列空抛异常</span></span><br><span class="line">queue.poll();<span class="comment">//队列空返回null</span></span><br><span class="line">queue.take();<span class="comment">//队列空阻塞</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查看头部元素</span></span><br><span class="line">queue.element();<span class="comment">//队列空抛异常</span></span><br><span class="line">queue.peek();<span class="comment">//队列空返回null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">for</span>(String string:queue)&#123;</span><br><span class="line">  System.out.println(string);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="PriorityQueue-优先队列"><a href="#PriorityQueue-优先队列" class="headerlink" title="PriorityQueue 优先队列"></a>PriorityQueue 优先队列</h3><p>通过完全二叉树（complete binary tree）实现的小顶堆（任意一个非叶子节点的权值，都不大于其左右子节点的权值）</p>
+<p><strong>优先队列的作用是能保证每次取出的元素都是队列中权值最小的</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">PriorityQueue&lt;Integer&gt; queue = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;();</span><br><span class="line"><span class="comment">//其余和queue相同</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="ArrayDeque-双端队列"><a href="#ArrayDeque-双端队列" class="headerlink" title="ArrayDeque 双端队列"></a>ArrayDeque 双端队列</h3><p>速度比LinkedList快</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">ArrayDeque&lt;String&gt; deque=<span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;String&gt;();</span><br><span class="line"><span class="comment">//其余和Queue一样，只写不一样的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//两头入队</span></span><br><span class="line">deque.addFirst(<span class="string">&#x27;element&#x27;</span>);<span class="comment">//队列满抛异常</span></span><br><span class="line">deque.addLast(<span class="string">&#x27;element&#x27;</span>);</span><br><span class="line">deque.offerFirst(<span class="string">&#x27;element&#x27;</span>);<span class="comment">//返回true，队列满返回false</span></span><br><span class="line">deque.offerLast(<span class="string">&#x27;element&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//两头出队</span></span><br><span class="line">queue.removeFirst();<span class="comment">//队列空抛异常</span></span><br><span class="line">queue.removeLast();</span><br><span class="line">queue.pollFirst();<span class="comment">//队列空返回null</span></span><br><span class="line">queue.pollLast();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Map-映射"><a href="#Map-映射" class="headerlink" title="Map 映射"></a>Map 映射</h2><h3 id="HashMap-哈希表（哈希映射）"><a href="#HashMap-哈希表（哈希映射）" class="headerlink" title="HashMap 哈希表（哈希映射）"></a>HashMap 哈希表（哈希映射）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">HashMap&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="comment">//通用</span></span><br><span class="line">map.size();</span><br><span class="line">map.isEmpty();</span><br><span class="line">map.clear();</span><br><span class="line"><span class="comment">//存放</span></span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line">map.put(<span class="string">&quot;key&quot;</span>, <span class="string">&quot;value&quot;</span>);<span class="comment">//如果key已存在就修改</span></span><br><span class="line"><span class="comment">//获取</span></span><br><span class="line">map.get(<span class="string">&quot;key&quot;</span>);</span><br><span class="line">map.getOrDefault(<span class="string">&quot;key&quot;</span>,<span class="string">&quot;defaultValue&quot;</span>);<span class="comment">//没有则返回默认值</span></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line">map.remove(<span class="string">&quot;key&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历对 (返回set)</span></span><br><span class="line"><span class="keyword">for</span>(Map.Entry&lt;String,String&gt; entry:map.entrySet())&#123;</span><br><span class="line">  System.out.println(<span class="string">&quot;Key = &quot;</span> + entry.getKey() + <span class="string">&quot;, Value = &quot;</span> + entry.getValue());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//遍历key (返回set)</span></span><br><span class="line"><span class="keyword">for</span>(String key:map.keySet())&#123;</span><br><span class="line">  System.out.println(<span class="string">&quot;Key = &quot;</span> + key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//遍历value (返回set)</span></span><br><span class="line"><span class="keyword">for</span>(String value:map.values())&#123;</span><br><span class="line">  System.out.println(<span class="string">&quot;Value = &quot;</span> + value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="TreeMap-树表"><a href="#TreeMap-树表" class="headerlink" title="TreeMap 树表"></a>TreeMap 树表</h3><p>自带顺序，根据<strong>key</strong>排序的键值对，因此 <strong>key</strong>必须可以比较</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">TreeMap&lt;Integer,String&gt; map=<span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;();</span><br><span class="line">TreeMap&lt;Integer,String&gt; map=<span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;((Comparator.naturalOrder());<span class="comment">//同上，默认正序</span></span><br><span class="line">TreeMap&lt;Integer,String&gt; map=<span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;(Comparator.reverseOrder()); <span class="comment">//倒序</span></span><br><span class="line"><span class="comment">//新增</span></span><br><span class="line">map.put(key,<span class="string">&quot;value&quot;</span>);</span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line">map.remove(key);</span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line">map.replace(key,<span class="string">&quot;value&quot;</span>);</span><br><span class="line">map.replace(key,<span class="string">&quot;value&quot;</span>);</span><br><span class="line"><span class="comment">//获取</span></span><br><span class="line">map.get(key)</span><br><span class="line">map.containsKey(key);</span><br><span class="line">map.containdValue(<span class="string">&quot;value&quot;</span>);</span><br><span class="line">map.firstKey();<span class="comment">//第一个（默认最小）key</span></span><br><span class="line">map.lastKay();<span class="comment">//最后一个（默认最大）key</span></span><br><span class="line">map.firstEntry();<span class="comment">//第一个键值对</span></span><br><span class="line">map.lastEntry();<span class="comment">//最后一个键值对</span></span><br><span class="line"><span class="comment">//其余同HashMap</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Set-集合"><a href="#Set-集合" class="headerlink" title="Set 集合"></a>Set 集合</h2><h3 id="HashSet-哈希集"><a href="#HashSet-哈希集" class="headerlink" title="HashSet 哈希集"></a>HashSet 哈希集</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">Set&lt;String&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line"><span class="comment">//通用</span></span><br><span class="line">set.size();</span><br><span class="line">set.isEmpty();</span><br><span class="line">set.clear();</span><br><span class="line">set.contains(<span class="string">&quot;element&quot;</span>);</span><br><span class="line"><span class="comment">//添加元素</span></span><br><span class="line">set.add(<span class="string">&quot;element&quot;</span>);</span><br><span class="line">Collections.addAll(set,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>);<span class="comment">//依次添加多个</span></span><br><span class="line">Collections.addAll(set,strArr);<span class="comment">//数组转set</span></span><br><span class="line">Collections.addAll(set,setB);<span class="comment">//添加另一个set</span></span><br><span class="line"><span class="comment">//删除元素</span></span><br><span class="line">set.remove(<span class="string">&quot;element&quot;</span>);</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">for</span>(String str:set)&#123;</span><br><span class="line">  System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="TreeSet-树集"><a href="#TreeSet-树集" class="headerlink" title="TreeSet 树集"></a>TreeSet 树集</h3><p>HashSet底层使用的是HashMap结构储存,而TreeSet底层用的是TreeMap树结构储存。</p>
+<p>因此TreeSet自带顺序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">Set&lt;String&gt; set=<span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;();</span><br><span class="line">Set&lt;String&gt; set=<span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(Comparator.naturalOrder());<span class="comment">//同上，默认正序</span></span><br><span class="line">Set&lt;String&gt; set=<span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(Comparator.reverseOrder());<span class="comment">//倒序</span></span><br><span class="line"><span class="comment">//其余同HashSet</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="String-x2F-StringBuffer-字符串"><a href="#String-x2F-StringBuffer-字符串" class="headerlink" title="String&#x2F;StringBuffer 字符串"></a>String&#x2F;StringBuffer 字符串</h2><p>在java中，String类不可变，每次操作都会生成一个新的String<br>StringBuffer是一个可变类，任何操作都不会产生新的对象，利用多线程操作字符串但速度较慢<br>StringBuilder和StringBuffer类似，也可变且速度更快，但利用单线程导致线程不安全（不能同步访问）</p>
+<p><strong>对于String</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取长度：</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">length</span><span class="params">()</span>;</span><br><span class="line"><span class="comment">//根据位置获取字符：</span></span><br><span class="line"><span class="type">char</span> <span class="title function_">charAt</span><span class="params">(<span class="type">int</span> index)</span>;</span><br></pre></td></tr></table></figure>
+<p>构造函数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String(<span class="type">char</span>[] chs);</span><br><span class="line">String(<span class="type">char</span>[] chs,<span class="type">int</span> begin,<span class="type">int</span> count);<span class="comment">//从begin以后count个</span></span><br></pre></td></tr></table></figure>
+
+<p>搜索：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(<span class="type">char</span> ch)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(String str1)</span>;<span class="comment">//第一次出现位置，否则返回-1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(<span class="type">char</span> ch ,<span class="type">int</span> index)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(String str1 ,<span class="type">int</span> index)</span>;<span class="comment">//index后第一次出现位置，否则返回-1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(<span class="type">char</span> ch)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">lastIndexOf</span><span class="params">(String str1)</span>;<span class="comment">//最后一次出现位置</span></span><br></pre></td></tr></table></figure>
+<p>判断：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>;</span><br><span class="line"><span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(String str1)</span>;</span><br><span class="line"><span class="type">boolean</span> <span class="title function_">equalsIgnoreCase</span><span class="params">(String str1)</span>;<span class="comment">//忽略大小写判断相等</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(String str1)</span>;<span class="comment">//是否包含</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">startWith</span><span class="params">(String str1)</span>;<span class="comment">//是否为开头</span></span><br><span class="line"><span class="type">boolean</span> <span class="title function_">endsWith</span><span class="params">(String str1)</span>;<span class="comment">//是否为结尾</span></span><br></pre></td></tr></table></figure>
+<p>转换：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>[] toCharArray();<span class="comment">//转换为字符数组</span></span><br></pre></td></tr></table></figure>
+<p>其他：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">toString</span><span class="params">()</span>;<span class="comment">//Object类方法，记录类名和位置</span></span><br><span class="line">String <span class="title function_">valueOf</span><span class="params">()</span>;<span class="comment">//同上，但不会报空指针而是显示null</span></span><br><span class="line">String <span class="title function_">valueOf</span><span class="params">(<span class="type">int</span> begin,<span class="type">int</span> count)</span>;<span class="comment">//从begin以后count个</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>valueOf</code>方法可以直接把基础数据类型转换成字符串</strong></p>
+<p>操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">repleace</span><span class="params">(<span class="type">char</span> oldChar,<span class="type">char</span> newChar)</span>;<span class="comment">//注意返回值是String</span></span><br><span class="line">String <span class="title function_">replace</span><span class="params">(String oldStr,String oldStr)</span>;<span class="comment">//将所有oldStr替换成newStr</span></span><br><span class="line">String[] split(String s);<span class="comment">//按照某一字符串分割原字符串</span></span><br><span class="line">String <span class="title function_">substring</span><span class="params">(<span class="type">int</span> begin,<span class="type">int</span> end)</span>;<span class="comment">//提取从begin到end的子串</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>对于StringBuffer&#x2F;StringBuilder</strong><br>操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">reverse</span><span class="params">()</span>;<span class="comment">//翻转</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">append</span><span class="params">(Object obj)</span>;<span class="comment">//加在末尾</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(<span class="type">int</span> index,Object obj)</span><span class="comment">//插入</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(<span class="type">int</span> begin,<span class="type">int</span> end)</span>;<span class="comment">//删除</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">deleteCharAt</span><span class="params">(<span class="type">int</span> index)</span>;<span class="comment">//删除某一位</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">replace</span><span class="params">(<span class="type">int</span> begin,<span class="type">int</span> end,String str)</span>;<span class="comment">//替换</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setCharAt</span><span class="params">(<span class="type">int</span> index,<span class="type">char</span> ch)</span>;<span class="comment">//设置某一位</span></span><br></pre></td></tr></table></figure>
+
+<p>判断：<br><strong>StringBuffer中 <code>equals()</code>方法未被重写，比较的是地址而不是内容</strong>，所以比较两个StringBuffer时需要调用两次<code>toString()</code>方法<br><strong>其余方法StringBuffer中未定义</strong></p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="Comparable接口"><a href="#Comparable接口" class="headerlink" title="Comparable接口"></a>Comparable接口</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Student&gt;&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> score;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Student</span><span class="params">(<span class="type">int</span> s)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.score=s;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Student o)</span> &#123;<span class="comment">//从小到大</span></span><br><span class="line">		<span class="keyword">return</span> (<span class="built_in">this</span>.score&gt;o.score)?<span class="number">1</span>:-<span class="number">1</span>;</span><br><span class="line"><span class="comment">//		return this.score-o.score;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		Student[] arr=<span class="keyword">new</span> <span class="title class_">Student</span>[<span class="number">5</span>];</span><br><span class="line">		Arrays.sort(arr);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Comparator接口"><a href="#Comparator接口" class="headerlink" title="Comparator接口"></a>Comparator接口</h3><p><strong>单次排序可以直接在的调用方法时实现接口</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> score;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		Student[] a=<span class="keyword">new</span> <span class="title class_">Student</span>[<span class="number">10</span>];</span><br><span class="line">		Arrays.sort(a, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;Student&gt;() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Student o1, Student o2)</span> &#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				<span class="keyword">return</span> o1.score-o2.score;<span class="comment">//从小到大</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>多次排序可以创建一个对象以实现接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Comparator&lt;Student&gt; scoreCmp=<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;Student&gt;() &#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Student o1, Student o2)</span> &#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> o1.score-o2.score;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">Arrays.sort(a, scoreCmp);</span><br></pre></td></tr></table></figure>
+<p><strong>也可以直接写一个类用于实现接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StudentSort</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;Student&gt;&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Student o1, Student o2)</span> &#123;<span class="comment">//从小到大</span></span><br><span class="line">		<span class="keyword">return</span> (o1.score&gt;o2.score)?<span class="number">1</span>:-<span class="number">1</span>;</span><br><span class="line">		<span class="comment">//return o1.score-o2.score;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		Comparator cmp=<span class="keyword">new</span> <span class="title class_">StudentSort</span>();</span><br><span class="line">		Student[] arr=<span class="keyword">new</span> <span class="title class_">Student</span>[<span class="number">5</span>];</span><br><span class="line">		Arrays.sort(arr,cmp);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>除此之外该接口还可以用于分组</strong></p>
+<h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p><strong>idea以ctrl+D结束输入</strong></p>
+<h2 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h2><p>缓存读取类，加快输入速度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法 </span></span><br><span class="line">BufferedReader in=<span class="keyword">new</span> <span class="title class_">BufferedReader</span>( </span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line"><span class="comment">//读一行</span></span><br><span class="line">String[] strs = in.readLine().split(<span class="string">&quot; &quot;</span>);</span><br><span class="line"><span class="comment">//判断结束</span></span><br><span class="line">str=in.readLine();</span><br><span class="line">str==<span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h2><p>缓存输出类，加快输出速度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">BufferedWriter out=<span class="keyword">new</span> <span class="title class_">BufferedWriter</span>( </span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(System.out));</span><br><span class="line"><span class="comment">//要在方法后throws IOException</span></span><br><span class="line"><span class="comment">//写入，注意只能是String</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(String str)</span>;</span><br><span class="line"><span class="comment">//换行</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">newLine</span><span class="params">()</span>;</span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">flush</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="StreamTokenizer"><a href="#StreamTokenizer" class="headerlink" title="StreamTokenizer"></a>StreamTokenizer</h2><p>输入流标记类，更快的读取速度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">StreamTokenizer</span> <span class="variable">IN</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StreamTokenizer</span>(</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in)));</span><br><span class="line"><span class="comment">//自己实现的读整数方法，因为nval默认浮点，强制转型成整数</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">readInt</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    IN.nextToken();</span><br><span class="line">    <span class="keyword">return</span> (<span class="type">int</span>) IN.nval;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//读浮点方法</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">readDouble</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    IN.nextToken();</span><br><span class="line">    <span class="keyword">return</span> IN.nval;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//读字符串方法，注意是sval</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">readString</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    IN.nextToken();</span><br><span class="line">    <span class="keyword">return</span> IN.sval;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//判断结束</span></span><br><span class="line">IN.nextToken() != StreamTokenizer.TT_EOF;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="PrintWriter"><a href="#PrintWriter" class="headerlink" title="PrintWriter"></a>PrintWriter</h2><p>另一个缓存输出类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">PrintWriter</span> <span class="variable">OUT</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PrintWriter</span>(</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(System.out));</span><br><span class="line"><span class="comment">//使用和System.out相同</span></span><br><span class="line">OUT.println();</span><br><span class="line">OUT.print();</span><br><span class="line"><span class="comment">//最后记得清缓存输出</span></span><br><span class="line">OUT.flush();</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h1><h2 id="窗口JFrame"><a href="#窗口JFrame" class="headerlink" title="窗口JFrame"></a>窗口JFrame</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Frame</span> <span class="keyword">extends</span> <span class="title class_">JFrame</span>&#123;</span><br></pre></td></tr></table></figure>
+<p>创建一个新Frame类，继承预定义类JFrame，这样可以直接调用JFrame中方法而不用新创建JFrame对象<br>新定义方法：显示窗口<br>利用JFrame中预设的方法设置窗口的相关参数，忘记函数形参可以open declaration</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showUI</span><span class="params">()</span>&#123;</span><br></pre></td></tr></table></figure>
+<p>设置窗口大小</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setSize(<span class="number">800</span>，<span class="number">800</span>);</span><br></pre></td></tr></table></figure>
+<p>设置标题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setTitle(<span class="string">&quot;窗口&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>设置窗口居中显示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setLocationRelativeTo(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<p>设置退出方式，’3’为关闭窗口自动退出程序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setDefaultCloseOperation(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>设置布局方式为流式布局<br><strong>注意</strong>：<strong>因为流式布局为一个预定义类，所以应该创建一个对象再将其设置为窗口布局</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setLayout(<span class="keyword">new</span> <span class="title class_">FlowLayout</span>());</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*   其余函数体（为窗体添加其他元素）</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>设置窗口可见(<strong>写在添加元素之后，获取画笔之前</strong>)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setVisible(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="按钮JButton"><a href="#按钮JButton" class="headerlink" title="按钮JButton"></a>按钮JButton</h2><p>&#x2F;&#x2F; 设置组件的坐标<br>void setLocation(int x, int y)<br>void setLocation(Point p)</p>
+<p>&#x2F;&#x2F; 设置组件的宽高<br>void setSize(int width, int height)<br>void setSize(Dimension d)</p>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2023/03/21/计算机网络个人向笔记/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2023/03/21/Blog-Test/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-03-21 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2023 Hengist's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

@@ -135,11 +135,11 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2023/03/19/hello-world/" >Hello World</a>
+			<a href="/2023/03/21/软件工程导论学习笔记/" >软件工程导论学习笔记</a>
 		</h3>
 		</div>
 	<div class="col-md-4">
-		<div class="date">post @ 2023-03-19  </div>
+		<div class="date">post @ 2023-03-21  </div>
 		</div>
 	</div>
 	
@@ -149,17 +149,220 @@
   <div class="row">
 	
 	
-		<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+		<h1 id="软件工程导论"><a href="#软件工程导论" class="headerlink" title="软件工程导论"></a>软件工程导论</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>软件 &#x3D; 程序 + 数据 + 文档</strong></p>
+<p><strong>程序</strong>：按照事先设定的<strong>功能</strong>和<strong>性能</strong>需求执行的指令序列</p>
+<p>​	<strong>程序 &#x3D; 数据结构 + 算法</strong></p>
+<p><strong>数据</strong>：程序能正常操纵的信息的数据结构</p>
+<p>​	<strong>数据结构</strong>：计算机中存在一种或多种特定关系的数据元素的集合</p>
+<p><strong>文档</strong>：与程序开发、维护和使用有关的图文材料</p>
+<p><strong>软件本质：以计算为核心手段实现应用目标的解决方案</strong></p>
 	
 	</div>
-  <a type="button" href="/2023/03/19/hello-world/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2023/03/21/软件工程导论学习笔记/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2023/03/21/数据库系统个人向笔记/" >数据库系统个人向笔记</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2023-03-21  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><strong>数据库：</strong> 由一个<strong>数据库管理系统</strong>(DBMS, Database Management System)所管理的一个<strong>数据集合</strong></p>
+<p><strong>数据库管理系统</strong>：<br>功能：<strong>持久的大量的数据存储、用户接口和编程接口、事务管理</strong>（共享数据：多用户并发访问避免互相影响和损坏数据）<br>举例：Oracle, MySQL</p>
+<p><strong>数据定义语言(DDL, Data Definition Language):</strong> 创建数据库并确定其模式(Schema)。</p>
+<p><strong>数据库模式(Schema):</strong> 是一组用DDL表达的语句集合描述的数据库逻辑结构。<br>数据独立性依靠模式分级及模式之间的影像实现。</p>
+<p><strong>数据查询语言(DQL, Data Query Language)、数据操作语言(DML, Data Manipulation Language):</strong> 依据数据库模式查询或更新数据</p>
+<h2 id="有关数据库的三方面工作"><a href="#有关数据库的三方面工作" class="headerlink" title="有关数据库的三方面工作"></a>有关数据库的三方面工作</h2><p><strong>设计(design):</strong> 如何建立一个有用的数据库。需求分析，数据建模，关系设计。</p>
+<p><strong>编程(programming):</strong> 在数据库设计基础上，如何进行各种查询和计算操作。</p>
+<p><strong>实现:implementation):</strong> 如何构建一个数据库管理系统(DBMS)，独立于特定应用</p>
+	
+	</div>
+  <a type="button" href="/2023/03/21/数据库系统个人向笔记/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2023/03/21/计算机网络个人向笔记/" >计算机网络个人向笔记</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2023-03-21  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="计算机网络与互联网"><a href="#计算机网络与互联网" class="headerlink" title="计算机网络与互联网"></a>计算机网络与互联网</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本门课程章节：</p>
+<ol>
+<li><strong>计算机网络和互联网</strong>：绪论、关键术语和概念、框架性原理</li>
+<li><strong>应用层</strong>：<ul>
+<li>cs模型、p2p模型</li>
+<li>DNS域名系统</li>
+<li>电子邮件（SMTP, POP3, MIME）、FTP</li>
+<li>万维网（HTTP）</li>
+</ul>
+</li>
+<li><strong>传输层</strong>：<ul>
+<li>UDP, TCP</li>
+<li>套接字编程</li>
+</ul>
+</li>
+<li><strong>网络层：数据平面</strong>：<ul>
+<li>网络互联构造</li>
+<li>路由算法</li>
+</ul>
+</li>
+<li><strong>网络层：控制平面</strong>：<ul>
+<li>ipv4, 寻址</li>
+</ul>
+</li>
+<li><strong>数据链路网和局域网（物理层）</strong><ul>
+<li>局域网、拓扑</li>
+<li>帧</li>
+<li>奇偶校验码</li>
+<li>循环冗余码（CRC）</li>
+<li>海明码</li>
+<li>CSMA</li>
+<li>PPP</li>
+</ul>
+</li>
+<li><strong>网络安全</strong></li>
+<li><strong>无线和移动网络</strong></li>
+<li><strong>多媒体网络</strong></li>
+<li><strong>网络管理</strong></li>
+</ol>
+<p><strong>计算机网络核心原理</strong>：自底向上，每一层都有功能，向上有接口，向上层提供服务。同时每一层的实现依赖下层接口。</p>
+<h2 id="Internet"><a href="#Internet" class="headerlink" title="Internet"></a>Internet</h2><p><strong>网络</strong>：节点和边</p>
+<p><strong>计算机网络</strong>：联网的计算机所构成的系统</p>
+<p><strong>互联网</strong>：以TCP、IP协议为主构成的计算机网络</p>
+<p>Internet：网络的网络</p>
+	
+	</div>
+  <a type="button" href="/2023/03/21/计算机网络个人向笔记/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2023/03/21/Java常用API个人向总结/" >Java常用API个人向总结</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2023-03-21  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><h2 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">outer:</span><br><span class="line"><span class="keyword">for</span>()&#123;</span><br><span class="line">  <span class="keyword">break</span> outer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out.println(<span class="string">&quot;\&quot;Hello\&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Math-x2F-类型转换"><a href="#Math-x2F-类型转换" class="headerlink" title="Math&#x2F;类型转换"></a>Math&#x2F;类型转换</h2><p><strong>类型转换</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="type">int</span>)c</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>经典四舍五入</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">data</span> <span class="operator">=</span> <span class="number">3.02</span>;</span><br><span class="line"><span class="comment">//利用字符串格式化的方式实现四舍五入,保留1位小数</span></span><br><span class="line"><span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> String.format(<span class="string">&quot;%.1f&quot;</span>,data);</span><br><span class="line"><span class="comment">//1代表小数点后面的位数, 不足补0。f代表数据是浮点类型。保留2位小数就是“%.2f”，依此累推。</span></span><br><span class="line">System.out.println(result);<span class="comment">//输出3.0</span></span><br></pre></td></tr></table></figure>
+	
+	</div>
+  <a type="button" href="/2023/03/21/Java常用API个人向总结/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2023/03/21/Blog-Test/" >Blog Test</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2023-03-21  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p><strong>Hello! Welcome to my blog!</strong></p>
+
+	
+	</div>
+  <a type="button" href="/2023/03/21/Blog-Test/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2021/08/10/Google-Bigtable论文个人向笔记-补档/" >Google_Bigtable论文个人向笔记(补档)</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-08-10  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Bigtable：分布式结构化数据存储系统"><a href="#Bigtable：分布式结构化数据存储系统" class="headerlink" title="Bigtable：分布式结构化数据存储系统"></a>Bigtable：分布式结构化数据存储系统</h1><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>用来处理海量数据：分布在数千台普通服务器上的PB级数据<br>（1PB&#x3D;1024TB 1EB&#x3D;1024PB 1ZB&#x3D;1024EB）<br>应用广泛，从搜索引擎到地图卫星图像。<br><strong>提供一个灵活的、高性能的解决方案，以满足在数据量和响应速度等方面具有差异性的应用需求</strong></p>
+<h2 id="特点：高适用性、可扩展性、高性能、高可用性（灵活性）"><a href="#特点：高适用性、可扩展性、高性能、高可用性（灵活性）" class="headerlink" title="特点：高适用性、可扩展性、高性能、高可用性（灵活性）"></a>特点：高适用性、可扩展性、高性能、高可用性（灵活性）</h2><p>使用了一部分数据库的实现策略，但差别很大。<br><strong>不支持完整的关系数据模型，仅提供了简单的数据模型，通过此，用户可以动态控制数据的分布和格式。也就是对于Bigtable来说，数据只是单纯的数据，没有结构（Schema）。</strong><br>（对于schema我的理解是较为复杂的数据结构，例如图、树等）<br>我个人的理解是，因为该系统里面存储的都是数据量很大的table，所以叫Bigtable :)</p>
+<h1 id="数据模型："><a href="#数据模型：" class="headerlink" title="数据模型："></a>数据模型：</h1><p><strong>Google SSTable文件格式：一个持久化的、排序的、不可更改的Map结构</strong><br><strong>其中的key有行、列和时间戳三个维度，value 是string（byte数组）<br><code>(row:string, column:string,time:int64)-&gt;string</code></strong></p>
+<h2 id="行（row）："><a href="#行（row）：" class="headerlink" title="行（row）："></a>行（row）：</h2><p>行关键词是string，最高支持64kB   Bigtable通过行关键词的字典顺序来组织数据<br>在一行内的读写都是“原子”的（即可以对任何列进行操作）<br>在每一行中，可以进行数据的<strong>动态分区</strong>，形成“tablet”，提高读取访问效率。</p>
+<h2 id="列（column）："><a href="#列（column）：" class="headerlink" title="列（column）："></a>列（column）：</h2>
+	
+	</div>
+  <a type="button" href="/2021/08/10/Google-Bigtable论文个人向笔记-补档/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -206,7 +409,23 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2023/03/19/hello-world/" ><i class="fa fa-file-o"></i>Hello World</a>
+        <a href="/2023/03/21/软件工程导论学习笔记/" ><i class="fa fa-file-o"></i>软件工程导论学习笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2023/03/21/数据库系统个人向笔记/" ><i class="fa fa-file-o"></i>数据库系统个人向笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2023/03/21/计算机网络个人向笔记/" ><i class="fa fa-file-o"></i>计算机网络个人向笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2023/03/21/Java常用API个人向总结/" ><i class="fa fa-file-o"></i>Java常用API个人向总结</a>
+      </li>
+    
+      <li>
+        <a href="/2023/03/21/Blog-Test/" ><i class="fa fa-file-o"></i>Blog Test</a>
       </li>
     
   </ul>

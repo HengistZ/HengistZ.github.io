@@ -1,0 +1,536 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>软件工程导论学习笔记 | Hengist&#39;s Blog</title>
+  <meta name="author" content="Hengist">
+  
+  <meta name="description" content="软件工程导论概述定义软件 &amp;#x3D; 程序 + 数据 + 文档
+程序：按照事先设定的功能和性能需求执行的指令序列
+​	程序 &amp;#x3D; 数据结构 + 算法
+数据：程序能正常操纵的信息的数据结构
+​	数据结构：计算机中存在一种或多种特定关系的数据元素的集合
+文档：与程序开发、维护和使用有关的图文材料
+软件本质：以计算为核心手段实现应用目标的解决方案"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="软件工程导论学习笔记"/>
+  <meta property="og:site_name" content="Hengist&#39;s Blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Hengist&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Hengist&#39;s Blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 软件工程导论学习笔记</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="软件工程导论"><a href="#软件工程导论" class="headerlink" title="软件工程导论"></a>软件工程导论</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>软件 &#x3D; 程序 + 数据 + 文档</strong></p>
+<p><strong>程序</strong>：按照事先设定的<strong>功能</strong>和<strong>性能</strong>需求执行的指令序列</p>
+<p>​	<strong>程序 &#x3D; 数据结构 + 算法</strong></p>
+<p><strong>数据</strong>：程序能正常操纵的信息的数据结构</p>
+<p>​	<strong>数据结构</strong>：计算机中存在一种或多种特定关系的数据元素的集合</p>
+<p><strong>文档</strong>：与程序开发、维护和使用有关的图文材料</p>
+<p><strong>软件本质：以计算为核心手段实现应用目标的解决方案</strong></p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p><strong>抽象性</strong>：不可见、无磨损</p>
+<p><strong>一致性</strong>：依附于一定的环境（硬件、网络、技术、接口等）</p>
+<p><strong>持续变更性</strong>：易拷贝、易修改</p>
+<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>​	1946计算机诞生，软件被发明，采用机器语言或汇编语言</p>
+<p>​	六十年代，大容量高速计算机诞生，系统规模与复杂度提升，发生</p>
+<h4 id="软件危机："><a href="#软件危机：" class="headerlink" title="软件危机："></a>软件危机：</h4><ul>
+<li>开发进度失控</li>
+<li>开发成本失控</li>
+<li>产品质量失控、可靠性差</li>
+<li>产品难以维护</li>
+</ul>
+<p>​	为了达到降低软件生产成本 、改进软件产品质量、提高软件生产率水平的目标，1968北约科学委员会提出</p>
+<h4 id="软件工程学科："><a href="#软件工程学科：" class="headerlink" title="软件工程学科："></a>软件工程学科：</h4><ul>
+<li><strong>研究软件生产的客观规律性</strong></li>
+<li><strong>建立与系统化软件生产有关的概念、原则、方法、技术和工具</strong></li>
+<li><strong>将系统化的、规范的、可度量的方法用于软件的开发、运行和维护的过程</strong></li>
+<li><strong>将工程化应用于软件的开发中，指导和支持软件系统的生产活动</strong></li>
+</ul>
+<h4 id="科学、技术、工程的区别："><a href="#科学、技术、工程的区别：" class="headerlink" title="科学、技术、工程的区别："></a>科学、技术、工程的区别：</h4><ul>
+<li><strong>科学</strong>：发现和解释自然或社会现象 <em>“是什么、为什么”</em></li>
+<li><strong>技术</strong>：运用经验、技巧创造解决问题的工具 <em>“用什么来做”</em></li>
+<li><strong>工程</strong>：运用技术进行设计和规范解决复杂、实际问题 <em>“怎么做更好”</em></li>
+</ul>
+<h2 id="软件过程"><a href="#软件过程" class="headerlink" title="软件过程"></a>软件过程</h2><p>​	从软件项目需求定义开始直至软件经使用后废弃为止跨越整个生存期内的系统开发、运行和维护及相关项的总和</p>
+<h4 id="四项基本活动"><a href="#四项基本活动" class="headerlink" title="四项基本活动"></a>四项基本活动</h4><ul>
+<li><strong>软件规格说明</strong>：客户和工程师对软件进行定义和运行的约束</li>
+<li><strong>软件开发</strong>：对软件进行设计与编程实现</li>
+<li><strong>软件确认</strong>：对软件进行检查与确认</li>
+<li><strong>软件演化</strong>：随客户与市场需求变化对软件进行修改</li>
+</ul>
+<h3 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h3><p>![image-20230218170438337](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170438337.png)</p>
+<p><strong>计划 &lt;-&gt; 需求分析 &lt;-&gt; 设计 &lt;-&gt; 编码 &lt;-&gt; 测试 &lt;-&gt; 运行维护</strong><br><strong>（定义阶段）                     （开发阶段）     （维护阶段）</strong></p>
+<p><strong>特点</strong>：自上而下，相互衔接，适用于<strong>较为明确和稳定的需求</strong></p>
+<h3 id="原型模型"><a href="#原型模型" class="headerlink" title="原型模型"></a>原型模型</h3><p>![image-20230218170354366](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170354366.png)</p>
+<p><strong>需求分析 -&gt; 原型设计 -&gt; 演示原型 -&gt; 用户评价 -&gt; 构造产品 -&gt; 交付使用</strong><br><strong>重新修改补充需求&lt;– 用户不满意</strong></p>
+<p><strong>特点</strong>：在过程中逐步认知和明晰需求，<strong>减少了需求不明确带来的风险</strong></p>
+<h3 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h3><p>![image-20230218170338796](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170338796.png)</p>
+<p><strong>从内到外：</strong></p>
+<p><strong>原型1 -&gt; 需求计划 -&gt; 风险分析</strong></p>
+<p><strong>原型2 -&gt; 需求确认 -&gt; 开发计划 -&gt; 风险分析</strong></p>
+<p><strong>原型3 -&gt; 产品设计 -&gt; 设计确认 -&gt;组装测试 -&gt; 风险分析</strong></p>
+<p>**可运行原型 -&gt; 详细设计 -&gt; 编码、单元测试、组装、验收……  **</p>
+<p><strong>特点</strong>：<strong>迭代演化、在每次循环加入风险分析，适用于不明确且不稳定的需求</strong></p>
+<h3 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h3><p>![image-20230218170317373](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170317373.png)</p>
+<p><strong>线性过程+并行过程</strong></p>
+<p><strong>沟通 -&gt; 策划 -&gt; 建模（分析设计） -&gt; 构建（编码测试） -&gt; 部署（交付反馈）</strong><br><strong>（开启后一个增量的沟通）</strong></p>
+<p><strong>特点</strong>：第一个增量是核心产品、<strong>并行化效率提升</strong>，适用于需求较不稳定且 <strong>强调快速交付</strong>的产品</p>
+<h2 id="需求工程"><a href="#需求工程" class="headerlink" title="需求工程"></a>需求工程</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>以一种清晰、简洁、一致且无二义性的方式，对一个待开发软件系统中各个有意义的功能，和性能等方面的陈述的一个集合</strong></p>
+<h3 id="需求的层次"><a href="#需求的层次" class="headerlink" title="需求的层次"></a>需求的层次</h3><h4 id="业务需求"><a href="#业务需求" class="headerlink" title="业务需求"></a>业务需求</h4><h4 id="用户需求"><a href="#用户需求" class="headerlink" title="用户需求"></a>用户需求</h4><h4 id="系统需求"><a href="#系统需求" class="headerlink" title="系统需求"></a>系统需求</h4><h3 id="功能性需求"><a href="#功能性需求" class="headerlink" title="功能性需求"></a>功能性需求</h3><p><strong>对系统应该提供的服务、系统应当如何响应特定的输入、系统在特定情形中该如何表现的陈述</strong></p>
+<h2 id="非功能性需求"><a href="#非功能性需求" class="headerlink" title="非功能性需求"></a>非功能性需求</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>软件在<strong>运行时是否好用</strong>、<strong>执行速度是否足够快</strong>、<strong>故障率是否足够低</strong>、<strong>意外情况是否得到妥善处理</strong>等需求</p>
+<p>非功能性需求描述了一个软件系统应具备的<strong>属性、特征及其必须遵守的约束</strong></p>
+<h3 id="外部质量属性"><a href="#外部质量属性" class="headerlink" title="外部质量属性"></a>外部质量属性</h3><h4 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h4><p>规定条件下系统所用的资源</p>
+<ul>
+<li><strong>时间特性</strong>：响应和处理时间、吞吐量</li>
+<li><strong>资源利用率</strong>：使用资源数量和类别程度</li>
+<li><strong>容量</strong>：满足要求的最大限度</li>
+</ul>
+<h4 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h4><p>规定条件下执行指定功能的程度</p>
+<ul>
+<li><strong>成熟性</strong>：正常操作下满足可靠性的程度</li>
+<li><strong>可用性</strong>：在需要使用时，可操作和可访问的程度</li>
+<li><strong>容错性</strong>：硬件或软件在存在故障时，系统或产品也想预期一样运转的程度</li>
+<li><strong>易恢复性</strong>：在失效发生后重建性能级别和恢复数据的程度</li>
+</ul>
+<h4 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h4><p>特定使用条件下，特定用户达到满足的有效性、效率和满意度</p>
+<ul>
+<li><strong>适当性&#x2F;可辨认性</strong>：用户是否可以识别产品或系统适合他们的需求的程度</li>
+<li><strong>易学性</strong>：特定使用条件下，特定用户可通过学习使用产品，达到效率和满意度的目标的程度</li>
+<li><strong>易操作性</strong>：产品或系统具有易操作或易控制属性的程度</li>
+<li><strong>用户错误保护</strong>：系统保护用户免受错误的程度</li>
+<li><strong>用户界面美观</strong>：产品界面取悦或满足用户交互的程度</li>
+<li><strong>易接近性</strong>：产品使用的最广泛的特征和功能，在特定使用条件下的效率&#x2F;接近目标的程度</li>
+</ul>
+<h4 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h4><p>指产品或系统保护信息和数据，以便人员或其他系统的数据访问适当的程度，类型和级别的授权程度</p>
+<ul>
+<li><strong>机密性</strong>：产品或系统确保数据只能被有权之人访问的程度</li>
+<li><strong>完整性</strong>：系统、产品防止未经授权的访问或修改程序或数据的程度、</li>
+<li><strong>不可抵赖性</strong>：动作或事件已经发生，这样的事件和动作不能否定</li>
+<li><strong>问责性</strong>：一个实体的操作可以追溯到唯一实体的程度</li>
+<li><strong>真实性</strong>：一个主体或资源的身份可以被证明是一个声称</li>
+</ul>
+<h4 id="功能适用性"><a href="#功能适用性" class="headerlink" title="功能适用性"></a>功能适用性</h4><p>指产品在特定使用条件下，产品或系统满足明确和隐含要求的功能和程度</p>
+<ul>
+<li><strong>功能的完整性</strong>：功能集覆盖所有规定任务和用户目标的程度</li>
+<li><strong>功能的正确性</strong>：产品或系统提供具有所需精度的正确结果的程度</li>
+<li><strong>功能的适合性</strong>：功能促进指定任务和目标实现的程度</li>
+</ul>
+<h5 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h5><p>共享相同的硬件或软件时，产品执行其所需功能与其它系统交换信息的程度</p>
+<ul>
+<li><strong>共存性</strong>：与其他产品共享环境和资源时，无不利影响情况下，产品有效地执行功能的程度</li>
+<li><strong>互操作性</strong>：指两个或两个以上的系统、产品或部件可以交换信息，并使用已经交换的信息的程度</li>
+</ul>
+<h3 id="内部质量属性"><a href="#内部质量属性" class="headerlink" title="内部质量属性"></a>内部质量属性</h3><h4 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h4><p>系统产品能够扩展，从而轻松处理更多功能的程度</p>
+<ul>
+<li><strong>可修改性</strong>：产品系统能够快速地以较高的性价比对系统进行变更的能力</li>
+</ul>
+<h4 id="可移植性"><a href="#可移植性" class="headerlink" title="可移植性"></a>可移植性</h4><p>系统产品从一种软硬件环境移植到另一种的有效性和效率程度</p>
+<ul>
+<li><strong>适应性</strong>：有效的适用于另一种软硬件环境</li>
+<li><strong>易安装性</strong>：在指定环境下可以成功安装&#x2F;卸载的的有效性和效率程度</li>
+<li><strong>易替换性</strong>：在相同的环境下，替代另一个相同用途的指定软件产品的程度</li>
+</ul>
+<h4 id="可维护性"><a href="#可维护性" class="headerlink" title="可维护性"></a>可维护性</h4><p>维护者可以修改产品或系统的有效性和效率的程度</p>
+<ul>
+<li><strong>模块化</strong>：系统或程序由单个元件组成，改变一个对其他组件影响程度很小</li>
+<li><strong>可重用性</strong>：有利条件可以用在一个及以上的系统，或建立其他有用的程度</li>
+<li><strong>易分析性</strong>：评估一个产品或系统拟改变期中一个或多个组件的影响，或诊断软件中失效的原因或识别待修改部分的有效性和效率程度</li>
+<li><strong>可变性</strong>：指产品或系统可以有效和高效地修改，而不会引入缺陷或降解的现有产品质量的程度</li>
+<li><strong>易测性</strong>：指建立系统、产品和组件的测试标准的有效性和效率的程度</li>
+</ul>
+<h3 id="外部接口需求"><a href="#外部接口需求" class="headerlink" title="外部接口需求"></a>外部接口需求</h3><p>确保软件产品能够与外部组件正确的连接</p>
+<ul>
+<li><strong>用户界面</strong>：</li>
+<li><strong>硬件接口</strong>：</li>
+<li><strong>软件接口</strong>：</li>
+<li><strong>通讯接口</strong>：</li>
+</ul>
+<h3 id="开发约束需求"><a href="#开发约束需求" class="headerlink" title="开发约束需求"></a>开发约束需求</h3><p><strong>开发成本、交付进度、技术选型、遵循标准等方面提出的要求</strong></p>
+<ul>
+<li>必须使用或避免特定技术、工具、语言和数据库</li>
+<li>软件产品的操作环境或平台</li>
+<li>遵循特定的开发惯例或标准</li>
+<li>前向兼容和后向兼容</li>
+<li>法律法规或其他商业规则要求</li>
+<li>时间要求、内存或处理器限制、尺寸、重量、材料或成本</li>
+</ul>
+<h2 id="敏捷过程"><a href="#敏捷过程" class="headerlink" title="敏捷过程"></a>敏捷过程</h2><p>互联网发展后，需求日趋复杂、技术日新月异、市场变幻莫测，软件工程给需要<strong>在市场许可的期限内利用有限资源生产出满足需求的产品</strong>：</p>
+<p>​	<strong>利用流程活动(时序逻辑关系)+ 流程活动各要素 (如人员、方法、产品等)</strong></p>
+<p>2001年2月，“敏捷联盟（ The Agile Alliance ）”中17位方法学家达成共识，制定了“**敏捷软件开发宣言(敏捷宣言 Agile Manifesto)**”</p>
+<p>![image-20230218170233419](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170233419.png)</p>
+<h3 id="敏捷宣言四条价值观"><a href="#敏捷宣言四条价值观" class="headerlink" title="敏捷宣言四条价值观"></a>敏捷宣言四条价值观</h3><p><strong>个体和交互重于过程和工具</strong></p>
+<p>Individuals and interactions over processes and tools.</p>
+<p><strong>可工作的软件重于面面俱到的文档</strong></p>
+<p>Working software over comprehensive documentation.</p>
+<p><strong>客户合作重于合同谈判</strong></p>
+<p>Customer colleboration over contract negotiation</p>
+<p><strong>响应变化重于尊重计划</strong></p>
+<p>Responding to change over following a plan</p>
+<p>虽然右项也具有价值，但我们认为左项具备更大的价值</p>
+<p>That is, while there is value in the item on the right, we value the items on the right more.</p>
+<p>Kent Beck, James Grenning, Robert C.Martin, Mike Beedle,<br>Jim Highsmith, Steve Mellor, Arie Van Bennekum, Andrew Hunt,<br>Ken Schwaber, Alistair Cockburn, Ron Jeffries, Jeff Sutherland,<br>Ward Cunningham, Jon Kern, Dave Thomas, Martin Fowler, Brian Marick</p>
+<h3 id="敏捷过程12条原则"><a href="#敏捷过程12条原则" class="headerlink" title="敏捷过程12条原则"></a>敏捷过程12条原则</h3><ol>
+<li>最优先要做的是通过尽早地、持续地交付有价值的软件来使客户满意。</li>
+<li>即使到了开发后期，也欢迎改变需求，敏捷过程利用变化来为客户创造</li>
+<li>经常性交付可以工作的软件，交付的时间间隔越短越好</li>
+<li>在整个项目开发期间，商务人员和开发人员必须天天工作在一起</li>
+<li>围绕被激励起来的个体来构建项目，给他们提供所需的环境和支持，并且信任他们能够完成工作</li>
+<li>在团队内部，最具有效果且富有效率的信息传递方法，就是面对面交谈</li>
+<li>工作的软件是首要的进度度量标准</li>
+<li>敏捷过程提倡可持续的开发速度，责任人、开发者和用户应该能够保持一个长期的、恒定的开发速度</li>
+<li>不断地关注优秀设计的技能和好的设计会增强敏捷能力</li>
+<li>Make it simple</li>
+<li>最好的架构、需求和设计出自于自组织的团队</li>
+<li>每隔一段时间，团队会在如何才能更有效地工作方面进行反省，然后响应地对自己的行为进行调整</li>
+</ol>
+<h2 id="统一过程"><a href="#统一过程" class="headerlink" title="统一过程"></a>统一过程</h2><p>![image-20230218170546134](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170546134.png)</p>
+<p>1998年Rational公司面向对象领域三位杰出专家及UML创立者（Grady Booch、James  Rumbaugh、Ivar Jacobson）提出了统一过程的概念</p>
+<p><strong>Rational统一过程（Rational Unified Process，RUP）：迭代与增量生命周期模型</strong></p>
+<p>对于每个结构：均涉及<strong>人员、方法、产品</strong>等要素</p>
+<h3 id="动态结构"><a href="#动态结构" class="headerlink" title="动态结构"></a>动态结构</h3><p><strong>横轴：生命周期四个阶段</strong></p>
+<p>其中，每个阶段均会<strong>进行若干次的迭代</strong></p>
+<h4 id="先启阶段"><a href="#先启阶段" class="headerlink" title="先启阶段"></a>先启阶段</h4><p>目标：建立业务用例、确定项目的边界</p>
+<p>结束里程碑：生命周期目标里程碑</p>
+<h4 id="精化阶段"><a href="#精化阶段" class="headerlink" title="精化阶段"></a>精化阶段</h4><p>目标：建立稳定的构架、编制项目计划、淘汰项 目中最高风险的元素</p>
+<p>结束里程碑：生命周期构架里程碑</p>
+<h4 id="构建阶段"><a href="#构建阶段" class="headerlink" title="构建阶段"></a>构建阶段</h4><p>目标：所有构件和应用程序功能被开发并集成为 产品、所有的功能被详尽的测试</p>
+<p>结束里程碑：最初操作性能里程碑</p>
+<h4 id="产品化阶段"><a href="#产品化阶段" class="headerlink" title="产品化阶段"></a>产品化阶段</h4><p>目标：将软件产品交付给用户群体</p>
+<p>结束里程碑：产品发布里程碑</p>
+<h3 id="静态结构"><a href="#静态结构" class="headerlink" title="静态结构"></a>静态结构</h3><p><strong>纵轴：生命周期九个核心工作流程</strong></p>
+<p><strong>核心过程工作流程：</strong></p>
+<h4 id="业务建模"><a href="#业务建模" class="headerlink" title="业务建模"></a>业务建模</h4><p><strong>描述如何拟定客户组织的前景，并基于该前景来确定业务用例模型和业务对象模型中的流程、角色以及职责</strong></p>
+<p>人员：业务流程分析员、业务设计员、业务模型复审员</p>
+<p>工件：业务模型（用例图+对象模型）</p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p><strong>描述系统应该做什么，即捕获需求，并使开 发人员和用户就这一需求描述达成共识。</strong></p>
+<p>人员：系统分析员（需求工程师）、用户界面设计师（UI）、需求复审员</p>
+<p>工件：用例模型（用例文档）、用户界面模型（原型界面）</p>
+<h4 id="分析设计"><a href="#分析设计" class="headerlink" title="分析设计"></a>分析设计</h4><p><strong>将需求转化成未来系统的设计，为系统开发一个健壮的结构并调整设计使其与实现环境相匹配，优化其性能。</strong></p>
+<p>人员：架构设计师（架构师）、架构复审员、设计员、数据库设计员、设计复审员</p>
+<p>工件：产品架构设计模型（子系统、类图）</p>
+<h4 id="实现（实施）"><a href="#实现（实施）" class="headerlink" title="实现（实施）"></a>实现（实施）</h4><p>以构件的形式(源文件、二进制文件、可执行文件) 实现类和对象并测试；<br>以层次化的子系统形式定义代码的组织结构；<br>将各实施员完成的结果集成到可执行系统中。</p>
+<p>人员：架构设计师、程序员、集成员、代码复审员</p>
+<p>工件：实施模型（程序主体）</p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>验证产品的功能和性能，如对象间的交互作用、 所有构件是否正确集成、所有的需求是否已被正确的实现，识别确认缺陷并确保在部署前解决之。</p>
+<p>人员：测试设计员、测试员</p>
+<p>工件：测试模型（测试报告）+测试结果</p>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>描述了三种产品部署的模式：包括自定义安装、 市售和通过Internet使用软件；在每种模式中，都强调要在开发场所对产品进行测试，并在产品最终发布 之前进行Beta测试。</p>
+<p>人员：部署经理、程序员、技术文档编写员、课程开发员</p>
+<p>工件：产品的一个版本、文档培训资料</p>
+<p><strong>核心支持工作流程：</strong></p>
+<h4 id="配置与变更管理"><a href="#配置与变更管理" class="headerlink" title="配置与变更管理"></a>配置与变更管理</h4><p>描绘如何在多个成员组成的项目中控制大量的产物， 并提供了准则来管理演化系统中的多个变体，跟踪软件 创建过程中的版本</p>
+<p>人员：配置经理、变更控制经理、集成员</p>
+<p>工件：配置管理计划、变更请求、项目存储库和工作区</p>
+<h4 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h4><p>平衡竞争的目标、管理风险并克服各种约束，从而 成功交付使用户满意的产品，包括为项目的管理提供 框架，为计划、人员配备、执行和监控项目提供实用 的准则，为管理风险提供框架等</p>
+<p>人员：项目经理、项目复审员</p>
+<p>工件：商业理由、迭代计划、风险管理计划、质量保证计划及相应的评估文档</p>
+<h4 id="环境搭建与管理"><a href="#环境搭建与管理" class="headerlink" title="环境搭建与管理"></a>环境搭建与管理</h4><p>向软件开发组织提供软件开发的环境，包括过程和 工具</p>
+<p>人员：过程工程师、工具专家</p>
+<p>工件：工具及工具指南、工作流程指南</p>
+<h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><h3 id="用例图"><a href="#用例图" class="headerlink" title="用例图"></a>用例图</h3><p><strong>定义</strong>：用例是对一个参与者(actor)使用 系统的一项功能时所进行的交互过程的一 个文字描述序列。</p>
+<p><strong>要点</strong>：</p>
+<ul>
+<li>可观测→用例止于系统边界</li>
+<li>结果值→用例是有意义的目标</li>
+<li>系统执行→结果值由系统生成</li>
+<li><strong>由参与者观测→业务语言、用户观点</strong>：<br>处理订票错，订票对；显示XXX错，查看XXX对</li>
+</ul>
+<p>![image-20230218165400184](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218165400184.png)</p>
+<h4 id="泛化关系"><a href="#泛化关系" class="headerlink" title="泛化关系"></a>泛化关系</h4><p>泛化（generalization）代表一般与特殊的关系。</p>
+<p>泛化的意思与OO程序设计中的继承概念类似，在分析和设计阶段，用泛化术语较多一些</p>
+<h4 id="包含关系（必须）"><a href="#包含关系（必须）" class="headerlink" title="包含关系（必须）"></a>包含关系（必须）</h4><p>包含（include）指的是两个用例间的关系，其中一个用例（称作基本用例）的行为包含了另一个用例（称作包含用例）的行为</p>
+<h4 id="扩展关系（可选）"><a href="#扩展关系（可选）" class="headerlink" title="扩展关系（可选）"></a>扩展关系（可选）</h4><p>扩展（extend）指的是一个用例可以增强另一个用例的 行为，扩展用例提供了一个离散的行为 ,可以将自己添加 到基用例中</p>
+<p>![image-20230218170146770](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170146770.png)</p>
+<p>例：健康码区县防疫办用例图</p>
+<p>![image-20230218171301297](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218171301297.png)</p>
+<p>核酸检测机构用例图：</p>
+<p>![image-20230218171421322](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218171421322.png)</p>
+<h3 id="状态图"><a href="#状态图" class="headerlink" title="状态图"></a>状态图</h3><h4 id="要素"><a href="#要素" class="headerlink" title="要素"></a>要素</h4><p><strong>事件</strong>：对一个在时间和空间上占有 一定位置的有意义的事情的详细说明</p>
+<p><strong>状态</strong>：对象（类）生命周期的一个阶段，在该阶 段中该对象要满足一些特定的条件，并可从事特 定的活动</p>
+<p><strong>动作</strong>：可执行的原子计算。也就是说， 动作是不可中断的，其执行时间可忽略不计。</p>
+<p><strong>转换</strong>：是两个状态之间的一种关系，表示当一个特定的事件出现时，如果满 足一定的条件，对象就从第一个状态（源状态）进入第二个状态（目 标状态），并执行一定的动作。转换本身也是原子的</p>
+<p>![image-20230218170943872](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218170943872.png)</p>
+<h3 id="活动图"><a href="#活动图" class="headerlink" title="活动图"></a>活动图</h3><p>活动还有其它的图符：初态、终态、判断、<strong>同步（并发）</strong></p>
+<p>![image-20230218171737245](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218171737245.png)</p>
+<p>例：区县防疫办活动图</p>
+<p>![image-20230218172139766](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218172139766.png)</p>
+<h4 id="泳道图"><a href="#泳道图" class="headerlink" title="泳道图"></a>泳道图</h4><p>泳道是活动图 中的区域划分， 根据每个活动 的职责对所有 活动进行划分， 每个泳道代表 一个责任区</p>
+<p>![image-20230218172346092](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218172346092.png)</p>
+<p>![image-20230218172354389](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218172354389.png)</p>
+<h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><h4 id="关联关系"><a href="#关联关系" class="headerlink" title="关联关系"></a>关联关系</h4><p><strong>聚合关系</strong>：描述“整体-部分”的关 联关系，聚合关系没有改变整体 与部分之间整个关联的 导航含义，也与整体和 部分的生命周期无关</p>
+<p>![image-20230218173302967](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218173302967.png)</p>
+<p><strong>组合关系</strong>：组合关系中的部分要完 全依赖于整体</p>
+<p>![image-20230218173309933](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218173309933.png)</p>
+<p><strong>实现关系</strong>：实现关系用来表示规格说明与实现之间的关系。在类 图中，实现关系主要用于接口与实现该接口的类之间</p>
+<p>![image-20230218173351792](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218173351792.png)</p>
+<p>例如：普通用户类图</p>
+<p>![image-20230218173027876](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218173027876.png)</p>
+<p>![image-20230218173034218](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218173034218.png)</p>
+<p>健康码类图：</p>
+<p>![image-20230218173127473](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218173127473.png)</p>
+<h3 id="时序图-x2F-顺序图"><a href="#时序图-x2F-顺序图" class="headerlink" title="时序图&#x2F;顺序图"></a>时序图&#x2F;顺序图</h3><h4 id="顺序图的三种主要作用："><a href="#顺序图的三种主要作用：" class="headerlink" title="顺序图的三种主要作用："></a>顺序图的三种主要作用：</h4><ul>
+<li>细化用例的表达。本章前面我们已经提到，使用顺 序图的一大用途，就是讲用例所描述的需求与功能 转化为更加正式、层次更加分明的细化表达。</li>
+<li>有效地描述类职责的分配方式。我们可以根据顺序 图中各对象之间的交互关系和发送的消息来进一步 明确对象所属类的职责。</li>
+<li>丰富系统的使用语境的逻辑表达。系统的使用语境 即为系统可能的使用方式和使用环境。</li>
+</ul>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>顺序图中的对象与对象图中 的概念一样，都是类的实例 。顺序图中的对象可以是系 统的参与者或者任何有效的 系统对象。</p>
+<h4 id="生命线"><a href="#生命线" class="headerlink" title="生命线"></a>生命线</h4><p>生命线代表了一次交互中的 一个参与对象在一段时间内 存在。具体地说，在生命线 所代表的时间内，对象一直 是可以被访问的——可以随 时发送消息给它</p>
+<h4 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h4><p>激活，又称为控制焦点，表示 一个对象执行一个动作所经历 的时间段，既可以是直接执行 ，也可以是安排下级过程执行 。同时，激活也可以表示对应 对象在这段时间内不是空闲的 ，它正在完成某个任务，或正 被占用</p>
+<h4 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h4><p>消息是从一个对象（发送者）向另一个对象 （接收者）发送信号，或由一个对象（发送 者或调用者）调用另一个对象（接收者）的 操作</p>
+<p>例：健康码申诉时序图</p>
+<p>![image-20230218172643938](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218172643938.png)</p>
+<p>区县防疫办变码时序图</p>
+<p>![image-20230218172728498](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218172728498.png)</p>
+<p>普通用户查看个人信息</p>
+<p>![image-20230218173809594](E:\Program Files (x86)\typora\images\软件工程导论\image-20230218173809594.png)</p>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2023/03/21/数据库系统个人向笔记/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-03-21 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2023 Hengist's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
